@@ -23,14 +23,13 @@ export interface App {
   stack: TechStack[];
 }
 
-// ★★★ すべてのアプリデータをここに集約 ★★★
+// すべてのアプリデータをここに集約
 export const apps: App[] = [
-  // --- 既存のアプリ ---
   {
     id: 1,
     title: 'ポートフォリオサイト (SkillTrail)',
     description: 'Vue 3, Vite, Tailwind CSSを使い、自身の開発スキルと制作物を紹介するために構築したポートフォリオサイト。コンポーネント設計やデータ駆動のUI実装を学びました。',
-    screenshot: '', // '/screenshots/app1.png' のように後で設定
+    screenshot: '', 
     githubUrl: '#',
     tags: ['Vue', 'TypeScript', 'Tailwind CSS', 'Vite'],
     learnings: {
@@ -45,9 +44,6 @@ export const apps: App[] = [
       { name: 'Tailwind CSS', color: 'bg-sky-200 text-sky-800' },
     ],
   },
-  // (もし他にも既存のアプリがあればここに追加)
-
-  // --- Geminiと作成した新規アプリ 5件 ---
   {
     id: 4,
     title: 'AIマーケットアナリスト',
@@ -111,22 +107,29 @@ export const apps: App[] = [
   {
     id: 7,
     title: 'AI政権比較アナリスト',
-    description: '公開されている複数の政権の支持率や政策データを比較し、Geminiが中立的な立場から事実に基づいた比較レポートを生成。プロンプトによるAIの役割付けが重要でした。',
+    description: 'サーバーレスアーキテクチャ上で動作するWebスクレイピング機能とRAG (Retrieval-Augmented Generation) を組み合わせ、特定のテーマに関する最新情報に基づいた高度な分析を生成するシステム。各政党の公式サイトから最新の政策情報をリアルタイムで収集・ベクトル化し、それを知識ベースとしてGeminiに提供することで、単なるWeb検索では得られない、文脈を理解した深い分析レポートを生成します。',
     screenshot: '',
     appUrl: '#',
     githubUrl: '#',
-    tags: ['Vue', 'API', 'Gemini', 'プロンプトエンジニアリング'],
+    tags: ['RAG', 'Web Scraping', 'Serverless', 'Gemini', 'Prompt Engineering'],
     learnings: {
-      challenge: '政治のような繊細なトピックでは、AIが意図せず偏った、あるいは意見的な記述をしてしまうリスクがあった。',
-      solution: 'プロンプト内で「貴方は中立的な政治アナリストです。提供されたデータのみに基づき、感情や意見を交えずに事実のみを比較・報告してください」という強い役割（ロール）を与えることで、AIの出力を客観的かつ事実に即したものに制御した。',
+      challenge: '静的な知識しか持たないLLMに、常に変化する最新の政党の政策について分析させること。また、Webスクレイピングは対象サイトの構造変更に弱く、メンテナンスコストが高い点が課題でした。',
+      solution: 'アーキテクチャを工夫し、Vercel Functions等のサーバーレス環境で定期的にスクレイピング処理を実行。収集したテキストデータをチャンク（断片）に分割し、ベクトルデータベースに保存するRAGパイプラインを構築しました。ユーザーからの質問に対し、関連性の高いテキストチャンクを検索してプロンプトに埋め込むことで、Geminiは常に最新の一次情報源に基づいて回答を生成できます。これにより、LLMの知識を動的に拡張し、ハルシネーション（幻覚）を大幅に抑制することに成功しました。',
     },
-    features: ['複数政権のデータ比較表示', 'Geminiによる中立的な比較レポート生成', '参照データソースの明記'],
+    features: [
+      'サーバーレス関数による定期的なWebスクレイピング実行',
+      '収集データのベクトル化とデータベースへの保存',
+      'RAGによるLLMの知識ベースの動的拡張',
+      '中立性を担保するための役割（ロール）設定プロンプト',
+    ],
     stack: [
       { name: 'Vue 3', color: 'bg-green-200 text-green-800' },
+      { name: 'Vercel (Serverless)', color: 'bg-black text-white' },
+      { name: 'Puppeteer', color: 'bg-teal-200 text-teal-800' },
       { name: 'Gemini API', color: 'bg-red-200 text-red-800' },
-      { name: 'Prompt Engineering', color: 'bg-indigo-200 text-indigo-800' },
+      { name: 'Vector DB', color: 'bg-indigo-200 text-indigo-800' },
     ],
-  },
+  }, // ★★★ ここにカンマを追加しました ★★★
   {
     id: 8,
     title: '料理レシピ提案アプリ',

@@ -46,16 +46,26 @@ defineProps<{ app: App }>();
             <li v-for="(feature, index) in app.features" :key="index">{{ feature }}</li>
           </ul>
         </div>
+        
+        <!-- ★★★ ここから技術スタックの表示方法を変更 ★★★ -->
         <div>
-          <h4 class="text-xl font-semibold mb-3 text-gray-800">技術スタック</h4>
-          <div class="flex flex-wrap gap-2">
-            <span v-for="(tech, index) in app.stack" :key="index" class="text-sm font-medium px-3 py-1 rounded-full shadow-sm" :class="tech.color">
-              {{ tech.name }}
-            </span>
+          <h4 class="text-xl font-semibold mb-4 text-gray-800">技術スタック</h4>
+          <div class="space-y-4">
+            <!-- カテゴリごとにループ -->
+            <div v-for="category in app.stack" :key="category.category">
+              <h5 class="text-md font-bold text-gray-600 mb-2">{{ category.category }}</h5>
+              <!-- 各カテゴリ内の技術をループ -->
+              <div class="flex flex-wrap gap-2">
+                <span v-for="(tech, index) in category.technologies" :key="index" class="text-sm font-medium px-3 py-1 rounded-full shadow-sm" :class="tech.color">
+                  {{ tech.name }}
+                </span>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+        <!-- ★★★ ここまで ★★★ -->
 
+      </div>
     </div>
   </section>
 </template>

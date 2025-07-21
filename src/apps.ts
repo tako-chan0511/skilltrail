@@ -30,7 +30,7 @@ export const apps: App[] = [
     title: 'ポートフォリオサイト (SkillTrail)',
     description: 'Vue 3, Vite, Tailwind CSSを使い、自身の開発スキルと制作物を紹介するために構築したポートフォリオサイト。コンポーネント設計やデータ駆動のUI実装を学びました。',
     screenshot: '', 
-    githubUrl: '#',
+    githubUrl: 'https://github.com/tako-chan0511/skilltrail',
     tags: ['Vue', 'TypeScript', 'Tailwind CSS', 'Vite'],
     learnings: {
       challenge: 'Vue3+Vite環境とTailwind CSSの連携設定でエラーが頻発。特にパッケージ間のバージョン不整合が原因でスタイルが全く適用されなかった。',
@@ -129,8 +129,8 @@ export const apps: App[] = [
     title: 'AI政権比較アナリスト',
     description: 'サーバーレスアーキテクチャ上で動作するWebスクレイピング機能とRAG (Retrieval-Augmented Generation) を組み合わせ、特定のテーマに関する最新情報に基づいた高度な分析を生成するシステム。各政党の公式サイトから最新の政策情報をリアルタイムで収集・ベクトル化し、それを知識ベースとしてGeminiに提供することで、単なるWeb検索では得られない、文脈を理解した深い分析レポートを生成します。',
     screenshot: '',
-    appUrl: 'https://hara0511jp-politics.vercel.app/',
-    githubUrl: 'https://github.com/tako-chan0511/jp-politics',
+    appUrl: '#',
+    githubUrl: '#',
     tags: ['RAG', 'Web Scraping', 'Serverless', 'Gemini', 'Prompt Engineering'],
     learnings: {
       challenge: '静的な知識しか持たないLLMに、常に変化する最新の政党の政策について分析させること。また、Webスクレイピングは対象サイトの構造変更に弱く、メンテナンスコストが高い点が課題でした。',
@@ -155,8 +155,8 @@ export const apps: App[] = [
     title: '料理レシピ提案アプリ',
     description: '楽天レシピカテゴリランキングAPIと連携し、人気のレシピを多彩な条件で検索できるアプリケーション。複雑なパラメータを組み合わせるロジックをBFF(Backend for Frontend)に集約することで、フロントエンドの責務を分離し、保守性と拡張性を高めた設計になっています。',
     screenshot: '',
-    appUrl: 'https://hara0511my-recipes.vercel.app/',
-    githubUrl: 'https://github.com/tako-chan0511/my-recipes',
+    appUrl: '#',
+    githubUrl: '#',
     tags: ['React', 'BFF', 'Rakuten API', '状態管理'],
     learnings: {
       challenge: 'カテゴリ、調理時間、予算など複数の絞り込み条件を組み合わせた動的なAPIリクエストの構築。これらの複雑な状態管理をすべてフロントエンドで行うと、コンポーネントが肥大化し、見通しが悪くなる懸念がありました。',
@@ -173,6 +173,34 @@ export const apps: App[] = [
       { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' },
       { name: 'Rakuten API', color: 'bg-red-600 text-white' },
       { name: 'Vercel (BFF)', color: 'bg-black text-white' },
+    ],
+  },
+  // --- ★★★ ここから新規追加 ★★★ ---
+  {
+    id: 9,
+    title: 'ブックマーク管理アプリ',
+    description: 'SupabaseをBaaSとして採用した、個人認証付きのブックマーク管理PWA。認証情報とブックマークデータをPostgreSQLで一元管理し、RLS(Row Level Security)で堅牢なデータ保護を実現。認証不要で機能を試せるサンドボックスモードも搭載し、モバイルフレンドリーなUIとPWA対応で、どこからでも快適に利用できます。',
+    screenshot: '',
+    appUrl: 'https://hara0511bookmark-manager.vercel.app/',
+    githubUrl: 'https://github.com/tako-chan0511/bookmark-manager',
+    tags: ['Supabase', 'PWA', 'Auth', 'PostgreSQL', 'Vue 3'],
+    learnings: {
+      challenge: 'ユーザー毎にデータを完全に分離するセキュアなマルチテナントDBの実現と、認証状態に応じて「本番モード」と「サンドボックスモード」をシームレスに切り替える状態管理が課題でした。',
+      solution: 'SupabaseのRLS（行単位セキュリティ）ポリシーを活用。「`auth.uid() = user_id`」というルールをテーブルに適用し、SQLレベルでユーザーが自身のデータしか操作できないよう強制しました。フロントエンドでは、ユーザーの認証状態をリアクティブに監視し、未認証時は`localStorage`をデータソースとするサンドボックスモード、認証後はSupabaseクライアントをデータソースとする本番モードに動的に切り替えるロジックを実装しました。',
+    },
+    features: [
+      'Supabase Authによるメール・パスワード認証',
+      'RLSによるユーザーデータの厳格なアクセス制御',
+      'キーワードと複数タグによるAND/OR検索機能',
+      'Service Workerを利用したPWA対応（オフラインキャッシュ）',
+      '認証不要で試せるサンドボックスモード',
+    ],
+    stack: [
+      { name: 'Vue 3', color: 'bg-green-200 text-green-800' },
+      { name: 'Supabase', color: 'bg-emerald-300 text-emerald-900' },
+      { name: 'PostgreSQL', color: 'bg-sky-300 text-sky-900' },
+      { name: 'PWA', color: 'bg-amber-300 text-amber-900' },
+      { name: 'Tailwind CSS', color: 'bg-sky-200 text-sky-800' },
     ],
   },
 ];

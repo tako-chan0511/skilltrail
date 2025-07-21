@@ -175,7 +175,6 @@ export const apps: App[] = [
       { name: 'Vercel (BFF)', color: 'bg-black text-white' },
     ],
   },
-  // --- ★★★ ここから新規追加 ★★★ ---
   {
     id: 9,
     title: 'ブックマーク管理アプリ',
@@ -201,6 +200,35 @@ export const apps: App[] = [
       { name: 'PostgreSQL', color: 'bg-sky-300 text-sky-900' },
       { name: 'PWA', color: 'bg-amber-300 text-amber-900' },
       { name: 'Tailwind CSS', color: 'bg-sky-200 text-sky-800' },
+    ],
+  },
+  // --- ★★★ ここから新規追加 ★★★ ---
+  {
+    id: 10,
+    title: '天気予報アプリ',
+    description: '複数の外部APIとCDNライブラリを連携させた、リッチなUIを持つ天気予報PWA。LocationIQ APIで地名・住所から緯度経度を割り出し（ジオコーディング）、OpenWeatherMap APIで詳細な気象情報を取得。結果はLeaflet.js製のインタラクティブ地図上に表示されます。気象情報に合わせたサウンドをtone.jsで再生するなど、遊び心のある機能も搭載しています。',
+    screenshot: '',
+    appUrl: 'https://hara0511weather-app.vercel.app/',
+    githubUrl: 'https://github.com/tako-chan0511/weather-app',
+    tags: ['Web API', 'Leaflet.js', 'PWA', 'Vanilla JS'],
+    learnings: {
+      challenge: '複数の外部サービス（API、CDN）に依存するため、それぞれの非同期処理の順序制御とエラーハンドリングが複雑化。特に、ジオコーディングAPIの成功を待ってから気象情報APIを呼び出す、といった処理の連鎖をいかに綺麗に書くかが課題でした。',
+      solution: 'async/await構文を全面的に採用し、非同期処理のフローを同期的で読みやすいコードに改善。APIリクエスト部分を責務ごとにモジュール化し、例えば`LocationService`が緯度経度を返し、`WeatherService`がそれを引き受ける形に設計。これにより、各サービスは自身の役割に専念でき、コードの再利用性とテスト容易性が向上しました。',
+    },
+    features: [
+      '都市名・住所・地図クリックによる多彩な地点指定',
+      'Leaflet.jsによるインタラクティブ地図表示',
+      'OpenWeatherMap APIによる詳細な気象データ取得',
+      'tone.jsによる気象サウンドの再生',
+      'PWA対応によるネイティブアプリのような体験',
+    ],
+    stack: [
+      { name: 'JavaScript (ES6+)', color: 'bg-yellow-200 text-yellow-800' },
+      { name: 'OpenWeatherMap API', color: 'bg-blue-500 text-white' },
+      { name: 'LocationIQ API', color: 'bg-purple-500 text-white' },
+      { name: 'Leaflet.js', color: 'bg-green-500 text-white' },
+      { name: 'tone.js', color: 'bg-orange-400 text-white' },
+      { name: 'PWA', color: 'bg-amber-300 text-amber-900' },
     ],
   },
 ];

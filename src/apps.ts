@@ -363,7 +363,6 @@ export const apps: App[] = [
       { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' },
     ],
   },
-  // --- ★★★ ここから新規追加 ★★★ ---
   {
     id: 16,
     title: 'オセロ（リバーシ）',
@@ -385,6 +384,33 @@ export const apps: App[] = [
     stack: [
       { name: 'Vue 3 (Composition API)', color: 'bg-green-200 text-green-800' },
       { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' },
+      { name: 'PWA', color: 'bg-amber-300 text-amber-900' },
+      { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' },
+    ],
+  },
+  // --- ★★★ ここから新規追加 ★★★ ---
+  {
+    id: 17,
+    title: 'パズルスライダー N×M',
+    description: '正方形に限らず、N×Mの任意の盤面サイズで遊べるスライドパズル。純粋なJavaScriptで実装されており、状態管理とDOM操作の基本に忠実な設計が特徴です。アルゴリズムの核心は、常に解くことが可能な盤面を生成するシャッフルロジックにあります。',
+    screenshot: '',
+    appUrl: 'https://tako-chan0511.github.io/slidepuzzle/',
+    githubUrl: 'https://github.com/tako-chan0511/slidepuzzle',
+    tags: ['Algorithm', 'Vanilla JS', 'PWA', 'DOM'],
+    learnings: {
+      challenge: 'パズルをランダムにシャッフルした際に、物理的に解くことが不可能な配置（アンソルバブル）になってしまう問題。また、N×Mという非正方格子におけるタイルの移動可能性判定ロジックの一般化が課題でした。',
+      solution: '完全にランダムな配置を生成するのではなく、まず完成状態の盤面を用意し、そこから空きマスをランダムに動かす操作を数百回繰り返すことで、「解けることが保証された」シャッフル盤面を生成するアルゴリズムを採用しました。これにより、ユーザーが絶対にクリアできないという状況を回避しています。',
+    },
+    features: [
+      '行と列を個別に指定できるN×M盤面生成機能',
+      '解けることが保証されたシャッフルアルゴリズム',
+      '空きマスと同じ行・列のタイルを一括で移動させる便利機能',
+      'PWA対応によるオフラインでのプレイ',
+    ],
+    stack: [
+      { name: 'JavaScript (ES6+)', color: 'bg-yellow-200 text-yellow-800' },
+      { name: 'HTML5', color: 'bg-orange-200 text-orange-800' },
+      { name: 'CSS3', color: 'bg-blue-200 text-blue-800' },
       { name: 'PWA', color: 'bg-amber-300 text-amber-900' },
       { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' },
     ],

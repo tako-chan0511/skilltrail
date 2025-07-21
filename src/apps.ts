@@ -336,7 +336,6 @@ export const apps: App[] = [
       { name: 'PWA', color: 'bg-amber-300 text-amber-900' },
     ],
   },
-  // --- ★★★ ここから新規追加 ★★★ ---
   {
     id: 15,
     title: '数独（ナンプレ）＆ソルバー・トレーニング',
@@ -360,6 +359,32 @@ export const apps: App[] = [
       { name: 'JavaScript (ES6+)', color: 'bg-yellow-200 text-yellow-800' },
       { name: 'HTML5', color: 'bg-orange-200 text-orange-800' },
       { name: 'CSS3', color: 'bg-blue-200 text-blue-800' },
+      { name: 'PWA', color: 'bg-amber-300 text-amber-900' },
+      { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' },
+    ],
+  },
+  // --- ★★★ ここから新規追加 ★★★ ---
+  {
+    id: 16,
+    title: 'オセロ（リバーシ）',
+    description: 'Vue 3のComposition APIで構築された、クラシックなオセロゲーム。最大の特徴は、8x8の標準盤面だけでなく、4x4から24x24まで盤面サイズを動的に変更できる点です。ゲームのコアロジックとUIコンポーネントを分離し、Vueのリアクティブな特性を活かして、盤面の状態変更を即座に描画に反映させています。',
+    screenshot: '',
+    appUrl: 'https://tako-chan0511.github.io/othello-Vue3-/',
+    githubUrl: 'https://github.com/tako-chan0511/othello-Vue3-',
+    tags: ['Vue 3', 'Algorithm', 'GameDev', 'PWA'],
+    learnings: {
+      challenge: '盤面サイズが可変であるため、石を置ける場所の判定や、石を裏返すロジックを、特定の盤面サイズに依存しない汎用的なアルゴリズムとして実装する必要があったこと。8方向すべてに対して、どこまで石を裏返せるかを動的に計算するロジックの設計が最も挑戦的でした。',
+      solution: '盤面の状態を二次元配列で管理。ユーザーがマスをクリックした際、そのマスを起点として8方向（上下左右、斜め4方向）への探索をループで実行する関数を実装。各方向に対して、相手の石が連続し、その先に自分の石が存在するかを判定し、裏返せる石の座標をリストアップします。このロジックを盤面サイズに依存しない形にしたことで、任意のサイズの盤面に対応可能となりました。',
+    },
+    features: [
+      '4x4から24x24までの動的な盤面サイズ変更機能',
+      '石を置ける場所をハイライト表示するサポートモード',
+      '「一手戻す」機能とゲーム履歴の表示',
+      'PWA対応によるオフラインでのプレイ',
+    ],
+    stack: [
+      { name: 'Vue 3 (Composition API)', color: 'bg-green-200 text-green-800' },
+      { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' },
       { name: 'PWA', color: 'bg-amber-300 text-amber-900' },
       { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' },
     ],

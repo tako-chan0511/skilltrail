@@ -257,7 +257,6 @@ export const apps: App[] = [
       { name: 'MIDI-Writer-JS', color: 'bg-gray-400 text-white' },
     ],
   },
-  // --- ★★★ ここから新規追加 ★★★ ---
   {
     id: 12,
     title: 'ラッキーロトシミュレーション',
@@ -284,6 +283,32 @@ export const apps: App[] = [
       { name: 'Naive UI', color: 'bg-teal-200 text-teal-800' },
       { name: 'Chart.js', color: 'bg-pink-200 text-pink-800' },
       { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' },
+    ],
+  },
+  // --- ★★★ ここから新規追加 ★★★ ---
+  {
+    id: 13,
+    title: 'CSS初心者向け練習アプリ',
+    description: 'CSSのプロパティを視覚的・対話的に学習できるサンドボックス環境。DOM要素を直接ドラッグ＆ドロップで配置・リサイズしたり、専用のUI（スライダーやカラーピッカー）でスタイルをリアルタイムに変更可能。変更は即座にプレビューとコードに反映され、直感的なトライ＆エラーを通じてCSSの挙動を深く理解できます。',
+    screenshot: '',
+    appUrl: 'https://tako-chan0511.github.io/cssvisualizer/',
+    githubUrl: 'https://github.com/tako-chan0511/cssvisualizer',
+    tags: ['Vanilla JS', 'DOM', 'CSS', 'UI/UX'],
+    learnings: {
+      challenge: 'プレビュー画面上のDOM要素への操作（ドラッグ等）と、UIコントロール（スライダー等）からの変更、そしてコード表示という3者間の状態を完全に同期させること。いずれか一つを変更した際に、他の二つが遅延なく、かつ正確に追従するリアクティブなシステムの構築が最大の課題でした。',
+      solution: 'すべての状態（各要素の位置、サイズ、色など）を単一のJavaScriptオブジェクトとして一元管理する「Single Source of Truth」の設計パターンを採用。DOMイベントリスナーとUIコントロールの入力イベントは、すべてこの中央オブジェクトを更新するだけとし、オブジェクトの変更を監視するメインの描画関数が、差分を検知してプレビューとコード表示を再レンダリングするアーキテクチャを構築しました。',
+    },
+    features: [
+      'ドラッグ＆ドロップによる直感的な要素配置',
+      'スライダーやカラーピッカーによるリアルタイムなスタイル編集',
+      '変更と即座に同期するCSSコードの自動生成',
+      'FlexboxやGridなど、主要なレイアウトシステムの視覚的学習',
+    ],
+    stack: [
+      { name: 'JavaScript (ES6+)', color: 'bg-yellow-200 text-yellow-800' },
+      { name: 'HTML5', color: 'bg-orange-200 text-orange-800' },
+      { name: 'CSS3', color: 'bg-blue-200 text-blue-800' },
+      { name: 'Interact.js', color: 'bg-pink-300 text-pink-900' },
     ],
   },
 ];

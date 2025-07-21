@@ -518,7 +518,6 @@ export const apps: App[] = [
       { name: 'PWA', color: 'bg-amber-300 text-amber-900' },
     ],
   },
-  // --- ★★★ ここから新規追加 ★★★ ---
   {
     id: 22,
     title: 'ブロック崩し (Next.js/React版)',
@@ -544,6 +543,55 @@ export const apps: App[] = [
       { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' },
       { name: 'Canvas API', color: 'bg-red-300 text-red-900' },
       { name: 'PWA', color: 'bg-amber-300 text-amber-900' },
+    ],
+  },
+  {
+    id: 23,
+    title: '二桁の2乗暗算ゲーム (Streamlit版)',
+    description: 'PythonのWebアプリケーションフレームワークであるStreamlitを用いて開発した、暗算トレーニングアプリ。フロントエンドの知識がなくても、PythonだけでインタラクティブなUIを構築できるStreamlitの特性を探求。状態管理の仕組みがJavaScriptフレームワークと大きく異なる点が技術的なハイライトです。',
+    screenshot: '',
+    appUrl: 'https://squared-cypmgjuwvks8uqqehiuy2p.streamlit.app/',
+    githubUrl: 'https://github.com/tako-chan0511/sq2',
+    tags: ['Python', 'Streamlit', 'State Management'],
+    learnings: {
+      challenge: 'Streamlitはユーザーの操作ごとにスクリプト全体を再実行するため、ゲームの状態（現在の問題、スコアなど）を保持する標準的な方法がJavaScriptフレームワークとは全く異なった。変数を単純に宣言するだけでは、インタラクションのたびに初期化されてしまう。',
+      solution: 'Streamlitが提供するセッション状態管理機能 `st.session_state` を活用。これは、ユーザーセッションをまたいでデータを永続化させるための辞書ライクなオブジェクトです。ゲームの状態をすべて`st.session_state`に格納し、スクリプトの再実行時にも値が保持されるように設計。これにより、ステートフルなアプリケーションをPythonicに実装できることを学びました。',
+    },
+    features: [
+      'StreamlitによるインタラクティブなUI構築',
+      'st.session_state を用いた状態管理',
+      '出題範囲を動的に変更できる機能',
+      'Pythonによるシンプルなゲームロジック実装',
+    ],
+    stack: [
+      { name: 'Python', color: 'bg-blue-300 text-blue-900' },
+      { name: 'Streamlit', color: 'bg-red-400 text-white' },
+    ],
+  },
+  // --- ★★★ ここから新規追加 ★★★ ---
+  {
+    id: 24,
+    title: '二桁の暗算練習アプリ (2乗＆掛け算)',
+    description: 'Vue 3で構築された、二桁の2乗と二桁同士の掛け算に特化した暗算トレーニングツール。ユニークな「補助ステップ」機能は、掛け算の筆算過程を視覚的に分解して表示し、ユーザーの思考をサポート。Vue 3のリアクティブなデータバインディングを駆使した、教育的価値の高いUIが特徴です。',
+    screenshot: '',
+    appUrl: 'https://tako-chan0511.github.io/kakezan/',
+    githubUrl: 'https://github.com/tako-chan0511/kakezan',
+    tags: ['Vue 3', 'UI/UX', 'State Management', 'Algorithm'],
+    learnings: {
+      challenge: '掛け算の筆算過程をUIに落とし込む際の、複雑な状態管理。特に、各桁の計算結果を入力する複数のinput要素と、それらを元に計算される中間結果、そして最終的な答えのすべてをリアクティブに連動させることが課題でした。',
+      solution: 'Vue 3のComposition APIと`reactive`を使用し、掛け算のプロセス全体を表現する単一の状態オブジェクトを設計。このオブジェクトには、問題の数値、ユーザーが入力する各ステップの値、計算後の中間結果などが含まれます。UIの各`input`は`v-model`でこのオブジェクトの各プロパティに直接バインド。`watch`や`computed`プロパティを活用し、ユーザーの入力があるたびに中間結果と最終結果を自動的に再計算・表示する仕組みを構築しました。',
+    },
+    features: [
+      '二乗数と掛け算の2つの練習モード',
+      '掛け算の筆算過程を視覚的に分解・補助するUI',
+      'Vueのリアクティビティを活用したリアルタイムな入力・計算処理',
+      '動的な問題生成アルゴリズム',
+    ],
+    stack: [
+      { name: 'Vue 3 (Composition API)', color: 'bg-green-200 text-green-800' },
+      { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' },
+      { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' },
+      { name: 'UI/UX', color: 'bg-pink-200 text-pink-800' },
     ],
   },
 ];

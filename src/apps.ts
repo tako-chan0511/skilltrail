@@ -113,8 +113,8 @@ export const apps: App[] = [
     title: 'AI政権比較アナリスト',
     description: 'サーバーレスアーキテクチャ上で動作するWebスクレイピング機能とRAG (Retrieval-Augmented Generation) を組み合わせ、特定のテーマに関する最新情報に基づいた高度な分析を生成するシステム。各政党の公式サイトから最新の政策情報をリアルタイムで収集・ベクトル化し、それを知識ベースとしてGeminiに提供することで、単なるWeb検索では得られない、文脈を理解した深い分析レポートを生成します。',
     screenshot: '',
-    appUrl: '#',
-    githubUrl: '#',
+    appUrl: 'https://hara0511jp-politics.vercel.app/',
+    githubUrl: 'https://github.com/tako-chan0511/jp-politics',
     tags: ['RAG', 'Web Scraping', 'Serverless', 'Gemini API', 'Prompt Engineering', 'Vite', 'TypeScript'],
     learnings: {
       challenge: '静的な知識しか持たないLLMに、常に変化する最新の政党の政策について分析させること。また、Webスクレイピングは対象サイトの構造変更に弱く、メンテナンスコストが高い点が課題でした。',
@@ -134,8 +134,8 @@ export const apps: App[] = [
     title: '料理レシピ提案アプリ',
     description: '楽天レシピカテゴリランキングAPIと連携し、人気のレシピを多彩な条件で検索できるアプリケーション。複雑なパラメータを組み合わせるロジックをBFF(Backend for Frontend)に集約することで、フロントエンドの責務を分離し、保守性と拡張性を高めた設計になっています。',
     screenshot: '',
-    appUrl: '#',
-    githubUrl: '#',
+    appUrl: 'https://hara0511my-recipes.vercel.app/',
+    githubUrl: 'https://github.com/tako-chan0511/my-recipes',
     tags: ['Vue 3', 'BFF', 'Rakuten API', 'State Management', 'Vite', 'TypeScript'],
     learnings: {
       challenge: 'カテゴリ、調理時間、予算など複数の絞り込み条件を組み合わせた動的なAPIリクエストの構築。これらの複雑な状態管理をすべてフロントエンドで行うと、コンポーネントが肥大化し、見通しが悪くなる懸念がありました。',

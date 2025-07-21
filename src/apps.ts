@@ -31,7 +31,7 @@ export const apps: App[] = [
     description: 'Vue 3, Vite, Tailwind CSSを使い、自身の開発スキルと制作物を紹介するために構築したポートフォリオサイト。コンポーネント設計やデータ駆動のUI実装を学びました。',
     screenshot: '', 
     githubUrl: 'https://github.com/tako-chan0511/skilltrail',
-    tags: ['Vue', 'TypeScript', 'Tailwind CSS', 'Vite'],
+    tags: ['Vue 3', 'TypeScript', 'Tailwind CSS', 'Vite'],
     learnings: {
       challenge: 'Vue3+Vite環境とTailwind CSSの連携設定でエラーが頻発。特にパッケージ間のバージョン不整合が原因でスタイルが全く適用されなかった。',
       solution: 'package.jsonを見直し、Vite, Tailwind, PostCSS等のバージョンを広く使われている安定版に統一。古いnode_modulesとlockファイルを削除し再インストールすることで環境をクリーンにし、問題を解決した。',
@@ -51,7 +51,7 @@ export const apps: App[] = [
     screenshot: '', 
     appUrl: 'https://hara0511my-market-analyst.vercel.app/',
     githubUrl: 'https://github.com/tako-chan0511/my-market-analyst',
-    tags: ['RAG', 'Caching', 'Serverless', 'Gemini', 'Markdown'],
+    tags: ['RAG', 'Caching', 'Serverless', 'Gemini', 'Markdown', 'Vite', 'TypeScript'],
     learnings: {
       challenge: '同一企業への分析リクエストが頻発した場合の、APIコストの増大とレスポンス遅延。また、一般的なLLMの知識だけでは、直近の企業ニュースに基づいた専門的な質疑応答が困難でした。',
       solution: 'サーバーレス関数（BFF）にキャッシュ層を導入。GNewsへのリクエストとGeminiによる初期分析結果を、企業名をキーとして1日間キャッシュします。これによりAPIコストを削減し、2回目以降のアクセスを高速化しました。追加質問に対しては、収集したニュース記事本文を知識源とするRAGパイプラインを起動。これにより、最新情報に基づいた専門家レベルの対話を実現しました。',
@@ -77,7 +77,7 @@ export const apps: App[] = [
     screenshot: '',
     appUrl: 'https://hara0511my-daily-digest.vercel.app/',
     githubUrl: 'https://github.com/tako-chan0511/my-daily-digest',
-    tags: ['RAG', 'Web Scraping', '3-pane UI', 'Gemini', 'Markdown'],
+    tags: ['RAG', 'Web Scraping', '3-pane UI', 'Gemini', 'Markdown', 'Vite', 'TypeScript'],
     learnings: {
       challenge: '多様なHTML構造を持つニュースサイトからの安定した本文抽出。また、単なる要約に留まらず、ユーザーが記事内容について対話的に深掘りできる仕組みの構築が技術的な課題でした。',
       solution: 'バックエンドでPuppeteerを用いたスクレイピング関数をサーバーレスで実行し、本文を抽出してMarkdown形式に変換。ユーザーが記事を選択した際、この抽出テキストをその場限りの知識ベースとするRAGパイプラインを起動します。これにより、Geminiは記事の文脈に沿った正確な回答を生成でき、ユーザーは「この記事の〇〇について、もっと詳しく教えて」といった対話的な深掘りが可能になりました。',
@@ -105,7 +105,7 @@ export const apps: App[] = [
     screenshot: '',
     appUrl: 'https://hara0511ai-stat-analyst.vercel.app/',
     githubUrl: 'https://github.com/tako-chan0511/ai-stat-analyst',
-    tags: ['e-stat API', 'BFF', 'Serverless', 'Gemini', 'データ可視化'],
+    tags: ['e-stat API', 'BFF', 'Serverless', 'Gemini', 'データ可視化', 'Vite', 'TypeScript'],
     learnings: {
       challenge: 'e-stat APIのレスポンスは階層が深く、そのままではフロントエンドでの扱いやAIへの入力が困難。また、APIキーをクライアントサイドに露出させることはできない。',
       solution: 'Vercel FunctionsでBFF（Backend for Frontend）層を構築。BFFがAPIキーを安全に管理し、e-statからのRAWデータを必要な情報（項目名、値、単位など）だけに絞り込んだシンプルなJSONに加工してからフロントに返却。これによりフロントエンドの実装を簡略化し、AIには分析に不要なメタデータを与えないことで、トークン効率と分析精度の向上を両立させた。',
@@ -131,7 +131,7 @@ export const apps: App[] = [
     screenshot: '',
     appUrl: '#',
     githubUrl: '#',
-    tags: ['RAG', 'Web Scraping', 'Serverless', 'Gemini', 'Prompt Engineering'],
+    tags: ['RAG', 'Web Scraping', 'Serverless', 'Gemini', 'Prompt Engineering', 'Vite', 'TypeScript'],
     learnings: {
       challenge: '静的な知識しか持たないLLMに、常に変化する最新の政党の政策について分析させること。また、Webスクレイピングは対象サイトの構造変更に弱く、メンテナンスコストが高い点が課題でした。',
       solution: 'アーキテクチャを工夫し、Vercel Functions等のサーバーレス環境で定期的にスクレイピング処理を実行。収集したテキストデータをチャンク（断片）に分割し、ベクトルデータベースに保存するRAGパイプラインを構築しました。ユーザーからの質問に対し、関連性の高いテキストチャンクを検索してプロンプトに埋め込むことで、Geminiは常に最新の一次情報源に基づいて回答を生成できます。これにより、LLMの知識を動的に拡張し、ハルシネーション（幻覚）を大幅に抑制することに成功しました。',
@@ -157,7 +157,7 @@ export const apps: App[] = [
     screenshot: '',
     appUrl: '#',
     githubUrl: '#',
-    tags: ['React', 'BFF', 'Rakuten API', '状態管理'],
+    tags: ['Vue 3', 'BFF', 'Rakuten API', 'State Management', 'Vite', 'TypeScript'],
     learnings: {
       challenge: 'カテゴリ、調理時間、予算など複数の絞り込み条件を組み合わせた動的なAPIリクエストの構築。これらの複雑な状態管理をすべてフロントエンドで行うと、コンポーネントが肥大化し、見通しが悪くなる懸念がありました。',
       solution: 'フロントエンドはUIの状態（どのボタンが押されているか等）の管理に専念させ、BFF（サーバーレス関数）側でそれらの状態を解釈して楽天APIへのリクエストURLを組み立てる責務分離のアーキテクチャを採用。これによりフロントエンドは「何をしたいか」だけをBFFに伝えればよく、複雑なロジックから解放され、コードの可読性と保守性が大幅に向上しました。',
@@ -169,7 +169,7 @@ export const apps: App[] = [
       '将来的なAI機能（献立提案など）の追加を見据えた拡張性の高い設計',
     ],
     stack: [
-      { name: 'React', color: 'bg-cyan-200 text-cyan-800' },
+      { name: 'Vue 3', color: 'bg-green-200 text-green-800' },
       { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' },
       { name: 'Rakuten API', color: 'bg-red-600 text-white' },
       { name: 'Vercel (BFF)', color: 'bg-black text-white' },
@@ -182,7 +182,7 @@ export const apps: App[] = [
     screenshot: '',
     appUrl: 'https://hara0511bookmark-manager.vercel.app/',
     githubUrl: 'https://github.com/tako-chan0511/bookmark-manager',
-    tags: ['Supabase', 'PWA', 'Auth', 'PostgreSQL', 'Vue 3'],
+    tags: ['Supabase', 'PWA', 'Auth', 'PostgreSQL', 'Vue 3', 'Vite', 'TypeScript'],
     learnings: {
       challenge: 'ユーザー毎にデータを完全に分離するセキュアなマルチテナントDBの実現と、認証状態に応じて「本番モード」と「サンドボックスモード」をシームレスに切り替える状態管理が課題でした。',
       solution: 'SupabaseのRLS（行単位セキュリティ）ポリシーを活用。「`auth.uid() = user_id`」というルールをテーブルに適用し、SQLレベルでユーザーが自身のデータしか操作できないよう強制しました。フロントエンドでは、ユーザーの認証状態をリアクティブに監視し、未認証時は`localStorage`をデータソースとするサンドボックスモード、認証後はSupabaseクライアントをデータソースとする本番モードに動的に切り替えるロジックを実装しました。',
@@ -209,7 +209,7 @@ export const apps: App[] = [
     screenshot: '',
     appUrl: 'https://hara0511weather-app.vercel.app/',
     githubUrl: 'https://github.com/tako-chan0511/weather-app',
-    tags: ['Web API', 'Leaflet.js', 'PWA', 'Vanilla JS'],
+    tags: ['Web API', 'Leaflet.js', 'PWA', 'Vanilla JS', 'Vite', 'TypeScript'],
     learnings: {
       challenge: '複数の外部サービス（API、CDN）に依存するため、それぞれの非同期処理の順序制御とエラーハンドリングが複雑化。特に、ジオコーディングAPIの成功を待ってから気象情報APIを呼び出す、といった処理の連鎖をいかに綺麗に書くかが課題でした。',
       solution: 'async/await構文を全面的に採用し、非同期処理のフローを同期的で読みやすいコードに改善。APIリクエスト部分を責務ごとにモジュール化し、例えば`LocationService`が緯度経度を返し、`WeatherService`がそれを引き受ける形に設計。これにより、各サービスは自身の役割に専念でき、コードの再利用性とテスト容易性が向上しました。',
@@ -237,7 +237,7 @@ export const apps: App[] = [
     screenshot: '',
     appUrl: 'https://tako-chan0511.github.io/melodycanvas/',
     githubUrl: 'https://github.com/tako-chan0511/melodycanvas',
-    tags: ['Web Audio', 'Music', 'VexFlow', 'Pinia', 'Vue 3'],
+    tags: ['Web Audio', 'Music', 'VexFlow', 'Pinia', 'Vue 3', 'Vite', 'TypeScript'],
     learnings: {
       challenge: 'tone.jsが管理する音声イベントのタイミングと、VexFlowが描画する楽譜、そしてユーザーのUI操作（再生ボタンなど）を完全に同期させること。また、内部の音楽データ構造を、VexFlowの楽譜描画用フォーマットとMIDIファイル用フォーマットの両方に変換する必要がありました。',
       solution: 'アプリケーションの状態（再生中か、現在の再生位置など）をすべてPiniaストアに集約。各コンポーネントはこのストアをリアクティブに監視し、状態に応じて自身の描画を更新します。例えば、再生位置が変わるたびにVexFlowの楽譜上の対応する音符をハイライトする、といった処理を実装。データ変換については、内部データを各形式にマッピングする専用のユーティリティ関数（Adapterパターン）を作成し、責務を明確に分離しました。',
@@ -264,7 +264,7 @@ export const apps: App[] = [
     screenshot: '',
     appUrl: 'https://tako-chan0511.github.io/luckylotto',
     githubUrl: 'https://github.com/tako-chan0511/luckylotto',
-    tags: ['Vue 3', 'Pinia', 'Vue Router', 'Naive UI', 'Chart.js'],
+    tags: ['Vue 3', 'Pinia', 'Vue Router', 'Naive UI', 'Chart.js', 'PWA', 'Vite', 'TypeScript'],
     learnings: {
       challenge: 'シミュレーションのエントリー、購入履歴、統計データなど、アプリ全体で共有・連動させるべき状態が多岐にわたったこと。特に、複数のコンポーネントから状態を変更し、それをリアクティブに別のコンポーネントのグラフ描画に反映させるロジックが複雑化しました。',
       solution: 'Piniaを導入し、状態管理のロジックをコンポーネントから完全に分離。購入履歴や統計データなどをストアに集約し、各コンポーネントはストアのデータを参照・更新するだけのシンプルな責務にしました。`pinia-plugin-persistedstate`を組み合わせることで、リロードしてもデータが消えない永続化を容易に実現。これにより、複雑な状態遷移も非常に見通しよく管理できるようになりました。',
@@ -292,7 +292,7 @@ export const apps: App[] = [
     screenshot: '',
     appUrl: 'https://tako-chan0511.github.io/cssvisualizer/',
     githubUrl: 'https://github.com/tako-chan0511/cssvisualizer',
-    tags: ['Vanilla JS', 'DOM', 'CSS', 'UI/UX'],
+    tags: ['Vanilla JS', 'DOM', 'CSS', 'UI/UX', 'PWA', 'Vite', 'TypeScript'],
     learnings: {
       challenge: 'プレビュー画面上のDOM要素への操作（ドラッグ等）と、UIコントロール（スライダー等）からの変更、そしてコード表示という3者間の状態を完全に同期させること。いずれか一つを変更した際に、他の二つが遅延なく、かつ正確に追従するリアクティブなシステムの構築が最大の課題でした。',
       solution: 'すべての状態（各要素の位置、サイズ、色など）を単一のJavaScriptオブジェクトとして一元管理する「Single Source of Truth」の設計パターンを採用。DOMイベントリスナーとUIコントロールの入力イベントは、すべてこの中央オブジェクトを更新するだけとし、オブジェクトの変更を監視するメインの描画関数が、差分を検知してプレビューとコード表示を再レンダリングするアーキテクチャを構築しました。',
@@ -317,7 +317,7 @@ export const apps: App[] = [
     screenshot: '',
     appUrl: 'https://tako-chan0511.github.io/typingfall/',
     githubUrl: 'https://github.com/tako-chan0511/typingfall',
-    tags: ['GameDev', 'Vanilla JS', 'PWA', 'DOM'],
+    tags: ['GameDev', 'Vanilla JS', 'PWA', 'DOM', 'Vite', 'TypeScript'],
     learnings: {
       challenge: 'ゲームのメインループ（落下処理、入力判定、スコア更新）と、DOMの描画（単語の移動、キーボードのハイライト）を、パフォーマンスを損なうことなく滑らかに同期させること。特に、フレーム毎の状態更新と描画ロジックの分離が課題でした。',
       solution: '`requestAnimationFrame`で安定したゲームループを構築。ゲームの状態（スコア、レベル、単語の位置など）をすべて単一の`gameState`オブジェクトで管理。ループ内では、まず状態を更新するロジックを実行し、その変更された`gameState`に基づいてDOM要素のスタイルを一括で更新する、という明確な責務分離を行いました。これにより、不要な再描画を防ぎ、パフォーマンスを最適化しました。',
@@ -343,7 +343,7 @@ export const apps: App[] = [
     screenshot: '',
     appUrl: 'https://tako-chan0511.github.io/sudoku/',
     githubUrl: 'https://github.com/tako-chan0511/sudoku',
-    tags: ['Algorithm', 'Vanilla JS', 'PWA', 'Logic'],
+    tags: ['Algorithm', 'Vanilla JS', 'PWA', 'Logic', 'Vite', 'TypeScript'],
     learnings: {
       challenge: '再帰的なバックトラッキング（深さ優先探索）アルゴリズムによる問題生成と解答ロジックの実装。特に、人間が解ける範囲の良問を生成するための適切なヒント数の調整と、トレーニングモードで特定の解法パターン（例：予約、三国同盟）を盤面から認識させるロジックの構築が複雑でした。',
       solution: '数独のロジック（検証、解答、パターン認識）をUIのDOM操作から完全に分離したモジュールとして設計。盤面の状態は多次元配列で管理し、すべての操作はこの配列を更新する関数を介して行われます。UIは状態配列の変更を検知して再描画するだけのシンプルな構造にすることで、複雑なアルゴリズムの実装に集中できました。',
@@ -370,7 +370,7 @@ export const apps: App[] = [
     screenshot: '',
     appUrl: 'https://tako-chan0511.github.io/othello-Vue3-/',
     githubUrl: 'https://github.com/tako-chan0511/othello-Vue3-',
-    tags: ['Vue 3', 'Algorithm', 'GameDev', 'PWA'],
+    tags: ['Vue 3', 'Algorithm', 'GameDev', 'PWA', 'Vite', 'TypeScript'],
     learnings: {
       challenge: '盤面サイズが可変であるため、石を置ける場所の判定や、石を裏返すロジックを、特定の盤面サイズに依存しない汎用的なアルゴリズムとして実装する必要があったこと。8方向すべてに対して、どこまで石を裏返せるかを動的に計算するロジックの設計が最も挑戦的でした。',
       solution: '盤面の状態を二次元配列で管理。ユーザーがマスをクリックした際、そのマスを起点として8方向（上下左右、斜め4方向）への探索をループで実行する関数を実装。各方向に対して、相手の石が連続し、その先に自分の石が存在するかを判定し、裏返せる石の座標をリストアップします。このロジックを盤面サイズに依存しない形にしたことで、任意のサイズの盤面に対応可能となりました。',
@@ -395,7 +395,7 @@ export const apps: App[] = [
     screenshot: '',
     appUrl: 'https://tako-chan0511.github.io/slidepuzzle/',
     githubUrl: 'https://github.com/tako-chan0511/slidepuzzle',
-    tags: ['Algorithm', 'Vanilla JS', 'PWA', 'DOM'],
+    tags: ['Algorithm', 'Vanilla JS', 'PWA', 'DOM', 'Vite', 'TypeScript'],
     learnings: {
       challenge: 'パズルをランダムにシャッフルした際に、物理的に解くことが不可能な配置（アンソルバブル）になってしまう問題。また、N×Mという非正方格子におけるタイルの移動可能性判定ロジックの一般化が課題でした。',
       solution: '完全にランダムな配置を生成するのではなく、まず完成状態の盤面を用意し、そこから空きマスをランダムに動かす操作を数百回繰り返すことで、「解けることが保証された」シャッフル盤面を生成するアルゴリズムを採用しました。これにより、ユーザーが絶対にクリアできないという状況を回避しています。',
@@ -421,7 +421,7 @@ export const apps: App[] = [
     screenshot: '',
     appUrl: 'https://tako-chan0511.github.io/matchinggame',
     githubUrl: 'https://github.com/tako-chan0511/matchinggame',
-    tags: ['GameDev', 'Vanilla JS', 'PWA', 'State Management'],
+    tags: ['GameDev', 'Vanilla JS', 'PWA', 'State Management', 'Vite', 'TypeScript'],
     learnings: {
       challenge: '2枚のカードをめくった後の評価中（正解か不正解かを見せるための数秒間）に、ユーザーが3枚目のカードをクリックできてしまう問題。これにより、ゲームのロジックが破綻する可能性がありました。',
       solution: 'ゲーム盤全体を覆う透明なオーバーレイ要素を用意し、CSSの`pointer-events`プロパティを活用。2枚目のカードをクリックした直後にオーバーレイを表示してマウスクリックを無効化（`pointer-events: auto`）し、評価が終わった後に`setTimeout`で非表示にする（`pointer-events: none`）ことで、意図しないユーザー操作を完全にブロックする堅牢なUIを実現しました。',
@@ -447,7 +447,7 @@ export const apps: App[] = [
     screenshot: '',
     appUrl: 'https://tako-chan0511.github.io/Minesweeper/',
     githubUrl: 'https://github.com/tako-chan0511/Minesweeper',
-    tags: ['Vue 3', 'Algorithm', 'GameDev', 'PWA'],
+    tags: ['Vue 3', 'Algorithm', 'GameDev', 'PWA', 'Vite', 'TypeScript'],
     learnings: {
       challenge: 'ユーザーが最初にクリックしたマスとその周囲には地雷を配置しないロジックと、数字のないマスをクリックした際に隣接する安全なマスをすべて自動で開く、いわゆる「空白連鎖」の効率的な実装が課題でした。',
       solution: '地雷の配置処理を、ユーザーの最初のクリックイベントが発生した後に実行するアーキテクチャを採用。クリックされた座標を除外して地雷をランダムに配置することで、安全な初回クリックを保証しました。空白連鎖については、クリックされたマスを起点とするキュー（Queue）を用いた幅優先探索（BFS）アルゴリズムを実装。これにより、再帰呼び出しによるスタックオーバーフローのリスクを回避しつつ、連鎖的に開くマスを効率的に特定できました。',
@@ -473,7 +473,7 @@ export const apps: App[] = [
     screenshot: '',
     appUrl: 'https://tako-chan0511.github.io/tetris/',
     githubUrl: 'https://github.com/tako-chan0511/tetris/',
-    tags: ['Vue 3', 'GameDev', 'Algorithm', 'PWA'],
+    tags: ['Vue 3', 'GameDev', 'Algorithm', 'PWA', 'Vite', 'TypeScript'],
     learnings: {
       challenge: 'ゲームの状態（盤面、現在のテトリミノの位置・形状、スコア等）をVueのリアクティブシステムとどう同期させるか。特に、`setInterval`で実行されるゲームループ内で状態を更新し、それをDOMに効率的に反映させること、そしてテトリミノの回転時に壁や他のブロックとの衝突を正確に判定する「ウォールキック」の実装が課題でした。',
       solution: '盤面の状態をVueの`ref`で定義した二次元配列で管理。ゲームループは`setInterval`で実装し、ループごとにテトリミノを1段落下させるロジック（配列の更新）を実行します。Vueのリアクティビティにより、この配列への変更は自動的にDOM（CSS Gridで構築した盤面）に反映されます。衝突判定や回転ロジックは、移動・回転後の仮の座標を計算し、それが盤面の境界内かつ他のブロックと重ならないかをチェックする純粋な関数として分離しました。',
@@ -499,7 +499,7 @@ export const apps: App[] = [
     screenshot: '',
     appUrl: 'https://tako-chan0511.github.io/breakout/',
     githubUrl: 'https://github.com/tako-chan0511/breakout/',
-    tags: ['Vue 3', 'Canvas', 'GameDev', 'PWA'],
+    tags: ['Vue 3', 'Canvas', 'GameDev', 'PWA', 'Vite', 'TypeScript'],
     learnings: {
       challenge: 'Vueの宣言的なレンダリング（テンプレート）と、`<canvas>`の命令的な描画APIをどう融合させるか。特に、Vueのリアクティブな状態変更をトリガーにして、パフォーマンスを維持しつつ`<canvas>`全体を効率的に再描画するアーキテクチャの設計が課題でした。',
       solution: 'Vueコンポーネントの`onMounted`ライフサイクルフックで`<canvas>`のコンテキストを取得し、ゲームループを開始。ループ内では、ボールの移動や衝突判定などの物理演算ロジックを実行して`reactive`な状態オブジェクトを更新します。Vueの`watch`機能を使ってこの状態オブジェクトの変更を監視し、変更があったフレームでのみ`<canvas>`のクリアと再描画を行う関数を呼び出します。これにより、状態管理はVueに任せ、描画は`requestAnimationFrame`に最適化させることができました。',
@@ -525,7 +525,7 @@ export const apps: App[] = [
     screenshot: '',
     appUrl: 'https://tako-chan0511.github.io/breakout-next/',
     githubUrl: 'https://github.com/tako-chan0511/breakout-next',
-    tags: ['Next.js', 'React', 'Canvas', 'GameDev', 'Hooks'],
+    tags: ['Next.js', 'React', 'Canvas', 'GameDev', 'Hooks', 'Vite', 'TypeScript'],
     learnings: {
       challenge: 'Vueのリアクティブシステム（`reactive`）からReactのHooks（`useState`, `useRef`, `useEffect`）への思考の切り替え。特に、`requestAnimationFrame`のゲームループ内で毎フレーム更新されるボールの座標などを`useState`で管理すると、過剰な再レンダリングを引き起こしパフォーマンスが低下する問題がありました。',
       solution: 'パフォーマンスに影響するゲーム状態（ボールの座標や速度など）は`useRef`で管理し、再レンダリングを発生させずに値を保持・更新。スコアやライフなど、UIの表示更新が必要な状態のみを`useState`で管理する責務分離を行いました。ゲームループは`useEffect`内で開始・停止を制御することで、Reactのコンポーネントライフサイクルに沿った安全な実装を実現しました。',
@@ -575,7 +575,7 @@ export const apps: App[] = [
     screenshot: '',
     appUrl: 'https://tako-chan0511.github.io/kakezan/',
     githubUrl: 'https://github.com/tako-chan0511/kakezan',
-    tags: ['Vue 3', 'UI/UX', 'State Management', 'Algorithm'],
+    tags: ['Vue 3', 'UI/UX', 'State Management', 'Algorithm', 'PWA', 'Vite', 'TypeScript'],
     learnings: {
       challenge: '掛け算の筆算過程をUIに落とし込む際の、複雑な状態管理。特に、各桁の計算結果を入力する複数のinput要素と、それらを元に計算される中間結果、そして最終的な答えのすべてをリアクティブに連動させることが課題でした。',
       solution: 'Vue 3のComposition APIと`reactive`を使用し、掛け算のプロセス全体を表現する単一の状態オブジェクトを設計。このオブジェクトには、問題の数値、ユーザーが入力する各ステップの値、計算後の中間結果などが含まれます。UIの各`input`は`v-model`でこのオブジェクトの各プロパティに直接バインド。`watch`や`computed`プロパティを活用し、ユーザーの入力があるたびに中間結果と最終結果を自動的に再計算・表示する仕組みを構築しました。',
@@ -600,7 +600,7 @@ export const apps: App[] = [
     screenshot: '',
     appUrl: 'https://tako-chan0511.github.io/Connect4/',
     githubUrl: 'https://github.com/tako-chan0511/Connect4/',
-    tags: ['Vue 3', 'GameDev', 'Algorithm', 'Logic'],
+    tags: ['Vue 3', 'GameDev', 'Algorithm', 'Logic', 'PWA', 'Vite', 'TypeScript'],
     learnings: {
       challenge: '毎ターン、盤面全体をスキャンして勝利条件をチェックするのは非効率。パフォーマンスを考慮し、いかに判定処理を最適化するかが課題でした。',
       solution: '勝利判定のアルゴリズムを、常に盤面全体ではなく「最後に置かれたコマ」を起点として実行するように設計。そのコマの位置から、縦・横・斜め右上がり・斜め右下がりの4方向（8つの向き）に対して、同じ色のコマがいくつ連続しているかをチェックします。これにより、計算量を大幅に削減し、即座に勝敗を判定できるパフォーマンスを実現しました。',
@@ -625,7 +625,7 @@ export const apps: App[] = [
     screenshot: '',
     appUrl: 'https://tako-chan0511.github.io/Solitaire/',
     githubUrl: 'https://github.com/tako-chan0511/Solitaire',
-    tags: ['Vue 3', 'GameDev', 'Algorithm', 'State Management', 'UI/UX'],
+    tags: ['Vue 3', 'GameDev', 'Algorithm', 'State Management', 'UI/UX', 'PWA', 'Vite', 'TypeScript'],
     learnings: {
       challenge: '7つの場札の山、4つの組札の山、山札、捨て札という複雑な状態と、それらの間でカードを移動させる際の厳密なルールセットをどう管理するか。特に、ドラッグ＆ドロップ操作と、その操作がルール上可能かどうかの検証ロジックをどう連携させるかが課題でした。',
       solution: 'ゲーム全体の盤面状態を`reactive`な単一オブジェクトで管理。各パイルをカードオブジェクトの配列として保持しました。カードの移動ロジックは、「移動元のカード」と「移動先のパイル」を引数に取り、ルールに合致するかを判定する純粋な関数としてカプセル化。UI側ではHTML5のDrag and Drop APIを利用し、`dragstart`で移動元カード情報を、`drop`で移動先パイル情報を取得し、この検証関数を呼び出すことで、ロジックとUIを綺麗に分離しました。',
@@ -651,7 +651,7 @@ export const apps: App[] = [
     screenshot: '',
     appUrl: 'https://my-hitblow-game.vercel.app/',
     githubUrl: 'https://github.com/tako-chan0511/my-hitblow-game',
-    tags: ['Vue 3', 'Algorithm', 'GameDev', 'Logic'],
+    tags: ['Vue 3', 'Algorithm', 'GameDev', 'Logic', 'PWA', 'Vite', 'TypeScript'],
     learnings: {
       challenge: '「候補絞り込みサポート」機能の実装。ユーザーの推測履歴（例：「1234」→「1 Hit, 2 Blow」）が増えるたびに、考えられるすべての数字の組み合わせ（最大10! = 約360万通り）を走査し、過去の履歴すべてと矛盾しないものだけをフィルタリングする必要がありました。この重い処理を、ブラウザをフリーズさせることなく実行することが最大の課題でした。',
       solution: '計算量の多いフィルタリング処理をメインスレッドから切り離すため、Web Workerを導入。UIスレッドとは別のスレッドで候補の計算を行うことで、計算中もユーザーがUIを快適に操作できるようにしました。また、PC対戦モードの思考ルーチンには、残りの候補が最も少なくなるような推測を次の手に選ぶ「ミニマックス法」に近い戦略的アルゴリズムを実装し、手強い対戦相手を実現しました。',
@@ -677,7 +677,7 @@ export const apps: App[] = [
     screenshot: '',
     appUrl: 'https://hitblow-next.vercel.app/',
     githubUrl: 'https://github.com/tako-chan0511/hitblow-next',
-    tags: ['Next.js', 'React', 'Hooks', 'Algorithm', 'Performance'],
+    tags: ['Next.js', 'React', 'Hooks', 'Algorithm', 'Performance', 'PWA', 'Vite', 'TypeScript'],
     learnings: {
       challenge: 'Vue版ではWeb Workerで解決した重い候補絞り込み処理を、Reactのエコシステム内でどう効率的に扱うか。ユーザーの入力履歴（依存配列）が変化するたびに数百万通りの組み合わせを再計算すると、UIがブロックされてしまう。',
       solution: 'Reactのメモ化Hooksである`useMemo`を活用。候補絞り込みを行う純粋関数を`useMemo`でラップし、その依存配列に推測履歴を指定しました。これにより、履歴が更新された時にのみ計算が実行され、不要な再レンダリング時の再計算を完全に防ぐことができます。Web Workerを使わずにメインスレッドで処理しつつも、Reactのレンダリング最適化機能によって快適なUXを維持するアプローチを学びました。',
@@ -696,7 +696,6 @@ export const apps: App[] = [
       { name: 'Performance', color: 'bg-green-300 text-green-900' },
     ],
   },
-  // --- ★★★ ここから新規追加 ★★★ ---
   {
     id: 29,
     title: 'ゲームハブ (Toppage)',
@@ -704,7 +703,7 @@ export const apps: App[] = [
     screenshot: '',
     appUrl: 'https://toppage-five.vercel.app/',
     githubUrl: 'https://github.com/tako-chan0511/toppage/',
-    tags: ['Jamstack', 'Vercel', 'Supabase', 'BFF', 'Vue 3'],
+    tags: ['Jamstack', 'Vercel', 'Supabase', 'BFF', 'Vue 3', 'Vite', 'TypeScript'],
     learnings: {
       challenge: '静的サイトとして高速な表示を実現しつつ、各ゲームカードの参照数や「いいね」数といった動的なデータをどう扱うか。クライアントから直接DBにアクセスすると、セキュリティやパフォーマンスに問題が生じる。',
       solution: 'フロントエンドとDBの間にVercel Serverless Functionsで構築したBFF(Backend for Frontend)層を設置。フロントエンドはBFFに対してAPIリクエストを送り、BFFがSupabaseクライアントを介して安全にDBと通信します。DBの接続情報はサーバーレス関数の環境変数に設定することで、クライアントサイドへの漏洩を完全に防ぎました。この構成により、静的サイトのメリットを享受しつつ、動的な機能をセキュアかつスケーラブルに実現できました。',

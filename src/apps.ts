@@ -202,7 +202,6 @@ export const apps: App[] = [
       { name: 'Tailwind CSS', color: 'bg-sky-200 text-sky-800' },
     ],
   },
-  // --- ★★★ ここから新規追加 ★★★ ---
   {
     id: 10,
     title: '天気予報アプリ',
@@ -229,6 +228,34 @@ export const apps: App[] = [
       { name: 'Leaflet.js', color: 'bg-green-500 text-white' },
       { name: 'tone.js', color: 'bg-orange-400 text-white' },
       { name: 'PWA', color: 'bg-amber-300 text-amber-900' },
+    ],
+  },
+  // --- ★★★ ここから新規追加 ★★★ ---
+  {
+    id: 11,
+    title: 'MelodyCanvas',
+    description: 'Web上でピアノ演奏を録音し、楽譜として可視化・編集できる音楽シーケンサー。tone.jsでWeb Audio APIを抽象化し、正確なタイミングでの音声再生と録音を実現。演奏データはVexFlowによってリアルタイムで五線譜にレンダリングされます。Piniaストアで演奏データや再生状態を一元管理し、localStorageへの永続化も行っています。',
+    screenshot: '',
+    appUrl: 'https://tako-chan0511.github.io/melodycanvas/',
+    githubUrl: 'https://github.com/tako-chan0511/melodycanvas',
+    tags: ['Web Audio', 'Music', 'VexFlow', 'Pinia', 'Vue 3'],
+    learnings: {
+      challenge: 'tone.jsが管理する音声イベントのタイミングと、VexFlowが描画する楽譜、そしてユーザーのUI操作（再生ボタンなど）を完全に同期させること。また、内部の音楽データ構造を、VexFlowの楽譜描画用フォーマットとMIDIファイル用フォーマットの両方に変換する必要がありました。',
+      solution: 'アプリケーションの状態（再生中か、現在の再生位置など）をすべてPiniaストアに集約。各コンポーネントはこのストアをリアクティブに監視し、状態に応じて自身の描画を更新します。例えば、再生位置が変わるたびにVexFlowの楽譜上の対応する音符をハイライトする、といった処理を実装。データ変換については、内部データを各形式にマッピングする専用のユーティリティ関数（Adapterパターン）を作成し、責務を明確に分離しました。',
+    },
+    features: [
+      'tone.jsによるリアルタイムなピアノ演奏と録音',
+      'VexFlowによる演奏データの五線譜への動的レンダリング',
+      'Piniaストアによる状態の一元管理とlocalStorageへの永続化',
+      '演奏データのJSONおよびMIDI形式でのエクスポート機能',
+      '再生速度のリアルタイム調整',
+    ],
+    stack: [
+      { name: 'Vue 3', color: 'bg-green-200 text-green-800' },
+      { name: 'tone.js', color: 'bg-orange-400 text-white' },
+      { name: 'VexFlow', color: 'bg-purple-400 text-white' },
+      { name: 'Pinia', color: 'bg-yellow-400 text-black' },
+      { name: 'MIDI-Writer-JS', color: 'bg-gray-400 text-white' },
     ],
   },
 ];

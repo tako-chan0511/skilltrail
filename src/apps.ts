@@ -310,7 +310,6 @@ export const apps: App[] = [
       { name: 'Interact.js', color: 'bg-pink-300 text-pink-900' },
     ],
   },
-  // --- ★★★ ここから新規追加 ★★★ ---
   {
     id: 14,
     title: 'キーボードタイピング練習アプリ (Typing Fall)',
@@ -335,6 +334,34 @@ export const apps: App[] = [
       { name: 'HTML5', color: 'bg-orange-200 text-orange-800' },
       { name: 'CSS3', color: 'bg-blue-200 text-blue-800' },
       { name: 'PWA', color: 'bg-amber-300 text-amber-900' },
+    ],
+  },
+  // --- ★★★ ここから新規追加 ★★★ ---
+  {
+    id: 15,
+    title: '数独（ナンプレ）＆ソルバー・トレーニング',
+    description: '純粋なJavaScriptで実装された、高機能な数独PWA。難易度別の問題生成、盤面サポート機能に加え、解法テクニックを解説する独自の「トレーニングモード」を搭載。ロジックの核心部である問題生成・解決アルゴリズムと、81マスに及ぶ盤面の複雑な状態管理が技術的な見どころです。',
+    screenshot: '',
+    appUrl: 'https://tako-chan0511.github.io/sudoku/',
+    githubUrl: 'https://github.com/tako-chan0511/sudoku',
+    tags: ['Algorithm', 'Vanilla JS', 'PWA', 'Logic'],
+    learnings: {
+      challenge: '再帰的なバックトラッキング（深さ優先探索）アルゴリズムによる問題生成と解答ロジックの実装。特に、人間が解ける範囲の良問を生成するための適切なヒント数の調整と、トレーニングモードで特定の解法パターン（例：予約、三国同盟）を盤面から認識させるロジックの構築が複雑でした。',
+      solution: '数独のロジック（検証、解答、パターン認識）をUIのDOM操作から完全に分離したモジュールとして設計。盤面の状態は多次元配列で管理し、すべての操作はこの配列を更新する関数を介して行われます。UIは状態配列の変更を検知して再描画するだけのシンプルな構造にすることで、複雑なアルゴリズムの実装に集中できました。',
+    },
+    features: [
+      'バックトラッキング法による問題生成とソルバー機能',
+      '解法テクニックをステップ・バイ・ステップで学べるトレーニングモード',
+      '候補数字のメモ機能や、矛盾箇所のハイライトなどの盤面サポート',
+      'localStorageを利用した盤面の状態保存・復元機能',
+      'PWA対応によるオフラインでのプレイ',
+    ],
+    stack: [
+      { name: 'JavaScript (ES6+)', color: 'bg-yellow-200 text-yellow-800' },
+      { name: 'HTML5', color: 'bg-orange-200 text-orange-800' },
+      { name: 'CSS3', color: 'bg-blue-200 text-blue-800' },
+      { name: 'PWA', color: 'bg-amber-300 text-amber-900' },
+      { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' },
     ],
   },
 ];

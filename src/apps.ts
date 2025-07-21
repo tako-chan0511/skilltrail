@@ -466,7 +466,6 @@ export const apps: App[] = [
       { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' },
     ],
   },
-  // --- ★★★ ここから新規追加 ★★★ ---
   {
     id: 20,
     title: 'テトリス (Tetris)',
@@ -491,6 +490,60 @@ export const apps: App[] = [
       { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' },
       { name: 'PWA', color: 'bg-amber-300 text-amber-900' },
       { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' },
+    ],
+  },
+  {
+    id: 21,
+    title: 'ブロック崩し (Breakout)',
+    description: 'Vue 3のリアクティブな状態管理と`<canvas>`要素を組み合わせて構築された、クラシックなブロック崩しゲーム。ゲームの全要素（ボール、パドル、ブロック）の状態をVueの`reactive`オブジェクトで一元管理し、`requestAnimationFrame`で駆動するゲームループがその状態を毎フレーム`<canvas>`に描画します。',
+    screenshot: '',
+    appUrl: 'https://tako-chan0511.github.io/breakout/',
+    githubUrl: 'https://github.com/tako-chan0511/breakout/',
+    tags: ['Vue 3', 'Canvas', 'GameDev', 'PWA'],
+    learnings: {
+      challenge: 'Vueの宣言的なレンダリング（テンプレート）と、`<canvas>`の命令的な描画APIをどう融合させるか。特に、Vueのリアクティブな状態変更をトリガーにして、パフォーマンスを維持しつつ`<canvas>`全体を効率的に再描画するアーキテクチャの設計が課題でした。',
+      solution: 'Vueコンポーネントの`onMounted`ライフサイクルフックで`<canvas>`のコンテキストを取得し、ゲームループを開始。ループ内では、ボールの移動や衝突判定などの物理演算ロジックを実行して`reactive`な状態オブジェクトを更新します。Vueの`watch`機能を使ってこの状態オブジェクトの変更を監視し、変更があったフレームでのみ`<canvas>`のクリアと再描画を行う関数を呼び出します。これにより、状態管理はVueに任せ、描画は`requestAnimationFrame`に最適化させることができました。',
+    },
+    features: [
+      'requestAnimationFrameによる滑らかなゲームループ',
+      'Vueのリアクティブな状態管理とCanvas APIの連携',
+      '矩形ベースのシンプルな衝突判定アルゴリズム',
+      'パドル幅やボールの色を動的に変更できるカスタマイズ機能',
+      'PWA対応によるオフラインでのプレイ',
+    ],
+    stack: [
+      { name: 'Vue 3 (Composition API)', color: 'bg-green-200 text-green-800' },
+      { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' },
+      { name: 'Canvas API', color: 'bg-red-300 text-red-900' },
+      { name: 'PWA', color: 'bg-amber-300 text-amber-900' },
+    ],
+  },
+  // --- ★★★ ここから新規追加 ★★★ ---
+  {
+    id: 22,
+    title: 'ブロック崩し (Next.js/React版)',
+    description: 'Vue 3で実装したブロック崩しをNext.jsとReact Hooksで再構築した技術研究プロジェクト。同じゲームロジックを異なるフレームワークで実装することで、それぞれの状態管理やレンダリングの思想の違いを深く探求することを目的としています。',
+    screenshot: '',
+    appUrl: 'https://tako-chan0511.github.io/breakout-next/',
+    githubUrl: 'https://github.com/tako-chan0511/breakout-next',
+    tags: ['Next.js', 'React', 'Canvas', 'GameDev', 'Hooks'],
+    learnings: {
+      challenge: 'Vueのリアクティブシステム（`reactive`）からReactのHooks（`useState`, `useRef`, `useEffect`）への思考の切り替え。特に、`requestAnimationFrame`のゲームループ内で毎フレーム更新されるボールの座標などを`useState`で管理すると、過剰な再レンダリングを引き起こしパフォーマンスが低下する問題がありました。',
+      solution: 'パフォーマンスに影響するゲーム状態（ボールの座標や速度など）は`useRef`で管理し、再レンダリングを発生させずに値を保持・更新。スコアやライフなど、UIの表示更新が必要な状態のみを`useState`で管理する責務分離を行いました。ゲームループは`useEffect`内で開始・停止を制御することで、Reactのコンポーネントライフサイクルに沿った安全な実装を実現しました。',
+    },
+    features: [
+      'VueからReact/Next.jsへのフレームワーク移植研究',
+      'React Hooks (`useState`, `useRef`, `useEffect`) による状態管理',
+      'requestAnimationFrameによる滑らかなゲームループ',
+      '矩形ベースのシンプルな衝突判定アルゴリズム',
+      'PWA対応によるオフラインでのプレイ',
+    ],
+    stack: [
+      { name: 'Next.js', color: 'bg-black text-white' },
+      { name: 'React (Hooks)', color: 'bg-cyan-200 text-cyan-800' },
+      { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' },
+      { name: 'Canvas API', color: 'bg-red-300 text-red-900' },
+      { name: 'PWA', color: 'bg-amber-300 text-amber-900' },
     ],
   },
 ];

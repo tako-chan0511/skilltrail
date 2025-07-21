@@ -285,7 +285,6 @@ export const apps: App[] = [
       { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' },
     ],
   },
-  // --- ★★★ ここから新規追加 ★★★ ---
   {
     id: 13,
     title: 'CSS初心者向け練習アプリ',
@@ -309,6 +308,33 @@ export const apps: App[] = [
       { name: 'HTML5', color: 'bg-orange-200 text-orange-800' },
       { name: 'CSS3', color: 'bg-blue-200 text-blue-800' },
       { name: 'Interact.js', color: 'bg-pink-300 text-pink-900' },
+    ],
+  },
+  // --- ★★★ ここから新規追加 ★★★ ---
+  {
+    id: 14,
+    title: 'キーボードタイピング練習アプリ (Typing Fall)',
+    description: 'ゲーム感覚でタイピングスキルを向上させるためのPWA。落下してくる単語を消していく「ゲームモード」と、正しい指使いを覚える「徹底練習モード」を搭載。リアルタイムな入力判定と、視覚・聴覚フィードバックによる高い没入感が特徴です。',
+    screenshot: '',
+    appUrl: 'https://tako-chan0511.github.io/typingfall/',
+    githubUrl: 'https://github.com/tako-chan0511/typingfall',
+    tags: ['GameDev', 'Vanilla JS', 'PWA', 'DOM'],
+    learnings: {
+      challenge: 'ゲームのメインループ（落下処理、入力判定、スコア更新）と、DOMの描画（単語の移動、キーボードのハイライト）を、パフォーマンスを損なうことなく滑らかに同期させること。特に、フレーム毎の状態更新と描画ロジックの分離が課題でした。',
+      solution: '`requestAnimationFrame`で安定したゲームループを構築。ゲームの状態（スコア、レベル、単語の位置など）をすべて単一の`gameState`オブジェクトで管理。ループ内では、まず状態を更新するロジックを実行し、その変更された`gameState`に基づいてDOM要素のスタイルを一括で更新する、という明確な責務分離を行いました。これにより、不要な再描画を防ぎ、パフォーマンスを最適化しました。',
+    },
+    features: [
+      'requestAnimationFrameによる滑らかなゲームループ',
+      '練習モードと、難易度別のゲームモード',
+      '入力キーと指位置のリアルタイムアシスト表示',
+      '正解・不正解時のサウンドエフェクト',
+      'PWA対応によるオフライン動作とインストール機能',
+    ],
+    stack: [
+      { name: 'JavaScript (ES6+)', color: 'bg-yellow-200 text-yellow-800' },
+      { name: 'HTML5', color: 'bg-orange-200 text-orange-800' },
+      { name: 'CSS3', color: 'bg-blue-200 text-blue-800' },
+      { name: 'PWA', color: 'bg-amber-300 text-amber-900' },
     ],
   },
 ];

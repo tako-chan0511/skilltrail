@@ -346,7 +346,7 @@ export const apps: App[] = [
     tags: ['Algorithm', 'Vanilla JS', 'PWA', 'Logic'],
     learnings: {
       challenge: '再帰的なバックトラッキング（深さ優先探索）アルゴリズムによる問題生成と解答ロジックの実装。特に、人間が解ける範囲の良問を生成するための適切なヒント数の調整と、トレーニングモードで特定の解法パターン（例：予約、三国同盟）を盤面から認識させるロジックの構築が複雑でした。',
-      solution: '数独のロジック（検証、解答、パターン認識）をUIのDOM操作から完全に分離したモジュールとして設計。盤面の状態は多次元配列で管理し、すべての操作はこの配列を更新する関数を介して行われます。UIは状態配列の変更を検知して再描画するだけのシンプルな構造にすることで、複雑なアルゴリズムの実装に集中できました。',
+      solution: '数独のロジック（検証、解答、パターン認識）をUIのDOM操作から完全に分離したモジュールとして設計。盤面の状態は多次元配列で管理し、すべての操作はこの配列を更新する関数を介して行われます。UIは状態配列の変更を検知して再描画するだけのシンプルな構造にすることで、複雑なアルゴリズ���の実装に集中できました。',
     },
     features: [
       'バックトラッキング法による問題生成とソルバー機能',
@@ -388,7 +388,6 @@ export const apps: App[] = [
       { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' },
     ],
   },
-  // --- ★★★ ここから新規追加 ★★★ ---
   {
     id: 17,
     title: 'パズルスライダー N×M',
@@ -413,6 +412,33 @@ export const apps: App[] = [
       { name: 'CSS3', color: 'bg-blue-200 text-blue-800' },
       { name: 'PWA', color: 'bg-amber-300 text-amber-900' },
       { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' },
+    ],
+  },
+  // --- ★★★ ここから新規追加 ★★★ ---
+  {
+    id: 18,
+    title: '神経衰弱 (Matching Game) N×M',
+    description: 'N×Mの任意の盤面サイズでプレイできる、クラシックな神経衰弱ゲーム。ゲームの状態遷移（1枚目選択中、2枚目選択中、評価中など）を管理するロジックと、ユーザーの連続クリックを防止するUI制御が開発のポイントです。Vanilla JSで実装されており、フロントエンドの基本的な状態管理のプラクティスが詰まっています。',
+    screenshot: '',
+    appUrl: 'https://tako-chan0511.github.io/matchinggame',
+    githubUrl: 'https://github.com/tako-chan0511/matchinggame',
+    tags: ['GameDev', 'Vanilla JS', 'PWA', 'State Management'],
+    learnings: {
+      challenge: '2枚のカードをめくった後の評価中（正解か不正解かを見せるための数秒間）に、ユーザーが3枚目のカードをクリックできてしまう問題。これにより、ゲームのロジックが破綻する可能性がありました。',
+      solution: 'ゲーム盤全体を覆う透明なオーバーレイ要素を用意し、CSSの`pointer-events`プロパティを活用。2枚目のカードをクリックした直後にオーバーレイを表示してマウスクリックを無効化（`pointer-events: auto`）し、評価が終わった後に`setTimeout`で非表示にする（`pointer-events: none`）ことで、意図しないユーザー操作を完全にブロックする堅牢なUIを実現しました。',
+    },
+    features: [
+      '行と列を個別に指定できるN×M盤面生成機能',
+      'Fisher-Yatesアルゴリズムによるカードのシャッフル',
+      '一定時間すべてのカードをプレビューできる「チラ見」機能',
+      'PWA対応によるオフラインでのプレイ',
+    ],
+    stack: [
+      { name: 'JavaScript (ES6+)', color: 'bg-yellow-200 text-yellow-800' },
+      { name: 'HTML5', color: 'bg-orange-200 text-orange-800' },
+      { name: 'CSS3', color: 'bg-blue-200 text-blue-800' },
+      { name: 'PWA', color: 'bg-amber-300 text-amber-900' },
+      { name: 'State Management', color: 'bg-red-200 text-red-800' },
     ],
   },
 ];

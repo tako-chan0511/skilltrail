@@ -12,7 +12,7 @@ defineProps<{ app: App }>();
     <header class="flex flex-wrap items-center justify-between gap-6 mb-6 border-b-2 border-gray-200 pb-6">
       <h3 class="text-4xl font-bold text-gray-900">{{ app.title }}</h3>
       <div class="flex items-center gap-3">
-        <a v-if="app.appUrl" :href="app.appUrl" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-5 rounded-lg transition-colors text-base shadow-md">
+        <a v-if="app.appUrl && app.appUrl !== '#'" :href="app.appUrl" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-5 rounded-lg transition-colors text-base shadow-md">
           アプリを試す
         </a>
         <a :href="app.githubUrl" target="_blank" class="bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-5 rounded-lg transition-colors text-base shadow-md">

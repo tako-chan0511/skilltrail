@@ -62,9 +62,11 @@ export const apps: App[] = [
     features: [ 'サーバーサイドキャッシュ(TTL:1日)による高速化・コスト削減', '収集ニュースを知識源とする動的なRAGチャット機能', 'Geminiによる分析レポートのMarkdown形式での生成', '重要キーワードの自動ハイライトによる可読性向上', ],
     stack: [
         { category: 'フロントエンド', technologies: [ { name: 'Vue 3', color: 'bg-green-200 text-green-800' }, { name: 'marked.js', color: 'bg-gray-700 text-white' } ] },
-        { category: 'バックエンド (Serverless)', technologies: [ { name: 'Vercel (BFF & Cache)', color: 'bg-black text-white' } ] },
+        { category: 'バックエンド (Serverless)', technologies: [ { name: 'Vercel Functions (BFF)', color: 'bg-black text-white' } ] },
+        { category: 'キャッシュ戦略', technologies: [ { name: 'サーバーサイドキャッシュ', color: 'bg-gray-300 text-gray-900' } ] },
         { category: 'AI', technologies: [ { name: 'Gemini API', color: 'bg-red-200 text-red-800' } ] },
-        { category: '外部API', technologies: [ { name: 'GNews API', color: 'bg-blue-800 text-white' } ] }
+        { category: '外部API', technologies: [ { name: 'GNews API', color: 'bg-blue-800 text-white' } ] },
+        { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
     ],
   },
   {
@@ -84,7 +86,8 @@ export const apps: App[] = [
         { category: 'フロントエンド', technologies: [ { name: 'JavaScript (ES6+)', color: 'bg-yellow-200 text-yellow-800' }, { name: 'marked.js', color: 'bg-gray-700 text-white' } ] },
         { category: 'バックエンド (Serverless)', technologies: [ { name: 'Vercel Functions', color: 'bg-black text-white' }, { name: 'Puppeteer', color: 'bg-teal-200 text-teal-800' } ] },
         { category: 'AI', technologies: [ { name: 'Gemini API', color: 'bg-red-200 text-red-800' } ] },
-        { category: '外部API', technologies: [ { name: 'GNews API', color: 'bg-blue-800 text-white' } ] }
+        { category: '外部API', technologies: [ { name: 'GNews API', color: 'bg-blue-800 text-white' } ] },
+        { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
     ],
   },
   {
@@ -104,7 +107,8 @@ export const apps: App[] = [
         { category: 'フロントエンド', technologies: [ { name: 'JavaScript', color: 'bg-yellow-200 text-yellow-800' }, { name: 'Chart.js', color: 'bg-pink-200 text-pink-800' } ] },
         { category: 'バックエンド (Serverless)', technologies: [ { name: 'Vercel (BFF)', color: 'bg-black text-white' } ] },
         { category: 'AI', technologies: [ { name: 'Gemini API', color: 'bg-red-200 text-red-800' } ] },
-        { category: '外部API', technologies: [ { name: 'e-stat API', color: 'bg-blue-800 text-white' } ] }
+        { category: '外部API', technologies: [ { name: 'e-stat API', color: 'bg-blue-800 text-white' } ] },
+        { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
     ],
   },
   {
@@ -124,7 +128,8 @@ export const apps: App[] = [
         { category: 'フロントエンド', technologies: [ { name: 'Vue 3', color: 'bg-green-200 text-green-800' } ] },
         { category: 'バックエンド (Serverless)', technologies: [ { name: 'Vercel Functions', color: 'bg-black text-white' }, { name: 'Puppeteer', color: 'bg-teal-200 text-teal-800' } ] },
         { category: 'AI', technologies: [ { name: 'Gemini API', color: 'bg-red-200 text-red-800' } ] },
-        { category: 'データベース', technologies: [ { name: 'Vector DB', color: 'bg-indigo-200 text-indigo-800' } ] }
+        { category: 'データベース', technologies: [ { name: 'Vector DB', color: 'bg-indigo-200 text-indigo-800' } ] },
+        { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
     ],
   },
   {
@@ -141,9 +146,10 @@ export const apps: App[] = [
     },
     features: [ '楽天APIと連携したカテゴリ別レシピランキング表示', '調理時間・予算など、複数の条件を組み合わせた絞り込み機能', 'BFFによるAPIリクエストロジックのカプセル化', '将来的なAI機能（献立提案など）の追加を見据えた拡張性の高い設計', ],
     stack: [
-        { category: 'フロントエンド', technologies: [ { name: 'Vue 3', color: 'bg-green-200 text-green-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] },
+        { category: 'フロントエンド', technologies: [ { name: 'Vue 3', color: 'bg-green-200 text-green-800' } ] },
         { category: 'バックエンド (Serverless)', technologies: [ { name: 'Vercel (BFF)', color: 'bg-black text-white' } ] },
-        { category: '外部API', technologies: [ { name: 'Rakuten API', color: 'bg-red-600 text-white' } ] }
+        { category: '外部API', technologies: [ { name: 'Rakuten API', color: 'bg-red-600 text-white' } ] },
+        { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
     ],
   },
   {
@@ -163,7 +169,9 @@ export const apps: App[] = [
         { category: 'アーキテクチャ', technologies: [ { name: 'PWA', color: 'bg-amber-300 text-amber-900' } ] },
         { category: 'フロントエンド', technologies: [ { name: 'Vue 3', color: 'bg-green-200 text-green-800' }, { name: 'Tailwind CSS', color: 'bg-sky-200 text-sky-800' } ] },
         { category: 'バックエンド (BaaS)', technologies: [ { name: 'Supabase Auth', color: 'bg-emerald-300 text-emerald-900' } ] },
-        { category: 'データベース', technologies: [ { name: 'Supabase (PostgreSQL)', color: 'bg-sky-300 text-sky-900' } ] }
+        { category: 'データベース', technologies: [ { name: 'Supabase (PostgreSQL)', color: 'bg-sky-300 text-sky-900' } ] },
+        { category: 'キャッシュ戦略', technologies: [ { name: 'オフライン (Service Worker)', color: 'bg-gray-300 text-gray-900' }, { name: 'クライアントサイド (localStorage)', color: 'bg-gray-300 text-gray-900' } ] },
+        { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
     ],
   },
   {
@@ -183,7 +191,9 @@ export const apps: App[] = [
         { category: 'アーキテクチャ', technologies: [ { name: 'PWA', color: 'bg-amber-300 text-amber-900' } ] },
         { category: 'フロントエンド', technologies: [ { name: 'JavaScript (ES6+)', color: 'bg-yellow-200 text-yellow-800' } ] },
         { category: '外部API', technologies: [ { name: 'OpenWeatherMap API', color: 'bg-blue-500 text-white' }, { name: 'LocationIQ API', color: 'bg-purple-500 text-white' } ] },
-        { category: 'ライブラリ', technologies: [ { name: 'Leaflet.js', color: 'bg-green-500 text-white' }, { name: 'tone.js', color: 'bg-orange-400 text-white' } ] }
+        { category: 'ライブラリ', technologies: [ { name: 'Leaflet.js', color: 'bg-green-500 text-white' }, { name: 'tone.js', color: 'bg-orange-400 text-white' } ] },
+        { category: 'キャッシュ戦略', technologies: [ { name: 'オフライン (Service Worker)', color: 'bg-gray-300 text-gray-900' } ] },
+        { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
     ],
   },
   {
@@ -202,7 +212,9 @@ export const apps: App[] = [
     stack: [
         { category: 'フロントエンド', technologies: [ { name: 'Vue 3', color: 'bg-green-200 text-green-800' }, { name: 'Pinia', color: 'bg-yellow-400 text-black' } ] },
         { category: 'Web API', technologies: [ { name: 'Web Audio API', color: 'bg-indigo-200 text-indigo-800' } ] },
-        { category: 'ライブラリ', technologies: [ { name: 'tone.js', color: 'bg-orange-400 text-white' }, { name: 'VexFlow', color: 'bg-purple-400 text-white' }, { name: 'MIDI-Writer-JS', color: 'bg-gray-400 text-white' } ] }
+        { category: 'ライブラリ', technologies: [ { name: 'tone.js', color: 'bg-orange-400 text-white' }, { name: 'VexFlow', color: 'bg-purple-400 text-white' }, { name: 'MIDI-Writer-JS', color: 'bg-gray-400 text-white' } ] },
+        { category: 'キャッシュ戦略', technologies: [ { name: 'クライアントサイド (localStorage)', color: 'bg-gray-300 text-gray-900' } ] },
+        { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
     ],
   },
   {
@@ -219,8 +231,10 @@ export const apps: App[] = [
     },
     features: [ 'ナンバーズ4・ロト6の抽選アルゴリズムシミュレーション', 'Vue RouterによるマルチページSPA構成', 'Piniaストアによる状態の一元管理とlocalStorageへの永続化', 'Naive UIコンポーネントによるリッチなUI構築', 'Chart.jsによる統計データのグラフ可視化', ],
     stack: [
+        { category: 'アーキテクチャ', technologies: [ { name: 'PWA', color: 'bg-amber-300 text-amber-900' } ] },
         { category: 'フロントエンド', technologies: [ { name: 'Vue 3', color: 'bg-green-200 text-green-800' }, { name: 'Pinia', color: 'bg-yellow-400 text-black' }, { name: 'Vue Router', color: 'bg-green-300 text-green-900' }, { name: 'Naive UI', color: 'bg-teal-200 text-teal-800' }, { name: 'Chart.js', color: 'bg-pink-200 text-pink-800' } ] },
-        { category: '言語', technologies: [ { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
+        { category: 'キャッシュ戦略', technologies: [ { name: 'オフライン (Service Worker)', color: 'bg-gray-300 text-gray-900' }, { name: 'クライアントサイド (localStorage)', color: 'bg-gray-300 text-gray-900' } ] },
+        { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
     ],
   },
   {
@@ -237,8 +251,11 @@ export const apps: App[] = [
     },
     features: [ 'ドラッグ＆ドロップによる直感的な要素配置', 'スライダーやカラーピッカーによるリアルタイムなスタイル編集', '変更と即座に同期するCSSコードの自動生成', 'FlexboxやGridなど、主要なレイアウトシステムの視覚的学習', ],
     stack: [
+        { category: 'アーキテクチャ', technologies: [ { name: 'PWA', color: 'bg-amber-300 text-amber-900' } ] },
         { category: 'フロントエンド', technologies: [ { name: 'JavaScript (ES6+)', color: 'bg-yellow-200 text-yellow-800' }, { name: 'HTML5', color: 'bg-orange-200 text-orange-800' }, { name: 'CSS3', color: 'bg-blue-200 text-blue-800' } ] },
-        { category: 'ライブラリ', technologies: [ { name: 'Interact.js', color: 'bg-pink-300 text-pink-900' } ] }
+        { category: 'ライブラリ', technologies: [ { name: 'Interact.js', color: 'bg-pink-300 text-pink-900' } ] },
+        { category: 'キャッシュ戦略', technologies: [ { name: 'オフライン (Service Worker)', color: 'bg-gray-300 text-gray-900' } ] },
+        { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
     ],
   },
   {
@@ -256,7 +273,9 @@ export const apps: App[] = [
     features: [ 'requestAnimationFrameによる滑らかなゲームループ', '練習モードと、難易度別のゲームモード', '入力キーと指位置のリアルタイムアシスト表示', '正解・不正解時のサウンドエフェクト', 'PWA対応によるオフライン動作とインストール機能', ],
     stack: [
         { category: 'アーキテクチャ', technologies: [ { name: 'PWA', color: 'bg-amber-300 text-amber-900' } ] },
-        { category: 'フロントエンド', technologies: [ { name: 'JavaScript (ES6+)', color: 'bg-yellow-200 text-yellow-800' }, { name: 'HTML5', color: 'bg-orange-200 text-orange-800' }, { name: 'CSS3', color: 'bg-blue-200 text-blue-800' } ] }
+        { category: 'フロントエンド', technologies: [ { name: 'JavaScript (ES6+)', color: 'bg-yellow-200 text-yellow-800' }, { name: 'HTML5', color: 'bg-orange-200 text-orange-800' }, { name: 'CSS3', color: 'bg-blue-200 text-blue-800' } ] },
+        { category: 'キャッシュ戦略', technologies: [ { name: 'オフライン (Service Worker)', color: 'bg-gray-300 text-gray-900' } ] },
+        { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
     ],
   },
   {
@@ -275,7 +294,9 @@ export const apps: App[] = [
     stack: [
         { category: 'アーキテクチャ', technologies: [ { name: 'PWA', color: 'bg-amber-300 text-amber-900' } ] },
         { category: 'フロントエンド', technologies: [ { name: 'JavaScript (ES6+)', color: 'bg-yellow-200 text-yellow-800' }, { name: 'HTML5', color: 'bg-orange-200 text-orange-800' }, { name: 'CSS3', color: 'bg-blue-200 text-blue-800' } ] },
-        { category: 'コアロジック', technologies: [ { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' } ] }
+        { category: 'コアロジック', technologies: [ { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' } ] },
+        { category: 'キャッシュ戦略', technologies: [ { name: 'オフライン (Service Worker)', color: 'bg-gray-300 text-gray-900' }, { name: 'クライアントサイド (localStorage)', color: 'bg-gray-300 text-gray-900' } ] },
+        { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
     ],
   },
   {
@@ -293,8 +314,10 @@ export const apps: App[] = [
     features: [ '4x4から24x24までの動的な盤面サイズ変更機能', '石を置ける場所をハイライト表示するサポートモード', '「一手戻す」機能とゲーム履歴の表示', 'PWA対応によるオフラインでのプレイ', ],
     stack: [
         { category: 'アーキテクチャ', technologies: [ { name: 'PWA', color: 'bg-amber-300 text-amber-900' } ] },
-        { category: 'フロントエンド', technologies: [ { name: 'Vue 3 (Composition API)', color: 'bg-green-200 text-green-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] },
-        { category: 'コアロジック', technologies: [ { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' } ] }
+        { category: 'フロントエンド', technologies: [ { name: 'Vue 3 (Composition API)', color: 'bg-green-200 text-green-800' } ] },
+        { category: 'コアロジック', technologies: [ { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' } ] },
+        { category: 'キャッシュ戦略', technologies: [ { name: 'オフライン (Service Worker)', color: 'bg-gray-300 text-gray-900' } ] },
+        { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
     ],
   },
   {
@@ -313,7 +336,9 @@ export const apps: App[] = [
     stack: [
         { category: 'アーキテクチャ', technologies: [ { name: 'PWA', color: 'bg-amber-300 text-amber-900' } ] },
         { category: 'フロントエンド', technologies: [ { name: 'JavaScript (ES6+)', color: 'bg-yellow-200 text-yellow-800' }, { name: 'HTML5', color: 'bg-orange-200 text-orange-800' }, { name: 'CSS3', color: 'bg-blue-200 text-blue-800' } ] },
-        { category: 'コアロジック', technologies: [ { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' } ] }
+        { category: 'コアロジック', technologies: [ { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' } ] },
+        { category: 'キャッシュ戦略', technologies: [ { name: 'オフライン (Service Worker)', color: 'bg-gray-300 text-gray-900' } ] },
+        { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
     ],
   },
   {
@@ -332,7 +357,9 @@ export const apps: App[] = [
     stack: [
         { category: 'アーキテクチャ', technologies: [ { name: 'PWA', color: 'bg-amber-300 text-amber-900' } ] },
         { category: 'フロントエンド', technologies: [ { name: 'JavaScript (ES6+)', color: 'bg-yellow-200 text-yellow-800' }, { name: 'HTML5', color: 'bg-orange-200 text-orange-800' }, { name: 'CSS3', color: 'bg-blue-200 text-blue-800' } ] },
-        { category: '状態管理', technologies: [ { name: 'State Management', color: 'bg-red-200 text-red-800' } ] }
+        { category: '状態管理', technologies: [ { name: 'State Management', color: 'bg-red-200 text-red-800' } ] },
+        { category: 'キャッシュ戦略', technologies: [ { name: 'オフライン (Service Worker)', color: 'bg-gray-300 text-gray-900' } ] },
+        { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
     ],
   },
   {
@@ -350,8 +377,10 @@ export const apps: App[] = [
     features: [ '幅・高さ・地雷数を自由に設定できる盤面生成機能', '最初のクリックが必ず安全マスになるアルゴリズム', '幅優先探索（BFS）による空白マスの連鎖展開', '右クリックによる旗立て・解除機能', 'PWA対応によるオフラインでのプレイ', ],
     stack: [
         { category: 'アーキテクチャ', technologies: [ { name: 'PWA', color: 'bg-amber-300 text-amber-900' } ] },
-        { category: 'フロントエンド', technologies: [ { name: 'Vue 3', color: 'bg-green-200 text-green-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] },
-        { category: 'コアロジック', technologies: [ { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' } ] }
+        { category: 'フロントエンド', technologies: [ { name: 'Vue 3', color: 'bg-green-200 text-green-800' } ] },
+        { category: 'コアロジック', technologies: [ { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' } ] },
+        { category: 'キャッシュ戦略', technologies: [ { name: 'オフライン (Service Worker)', color: 'bg-gray-300 text-gray-900' } ] },
+        { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
     ],
   },
   {
@@ -369,8 +398,10 @@ export const apps: App[] = [
     features: [ 'setIntervalによる安定したゲームループ制御', 'テトリミノの移動・回転・衝突判定アルゴリズム', 'キーボードとタッチ操作の両方に対応したレスポンシブなコントロール', 'ライン消去とスコア・レベルアップ機能', 'PWA対応によるオフラインでのプレイ', ],
     stack: [
         { category: 'アーキテクチャ', technologies: [ { name: 'PWA', color: 'bg-amber-300 text-amber-900' } ] },
-        { category: 'フロントエンド', technologies: [ { name: 'Vue 3 (Composition API)', color: 'bg-green-200 text-green-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] },
-        { category: 'コアロジック', technologies: [ { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' } ] }
+        { category: 'フロントエンド', technologies: [ { name: 'Vue 3 (Composition API)', color: 'bg-green-200 text-green-800' } ] },
+        { category: 'コアロジック', technologies: [ { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' } ] },
+        { category: 'キャッシュ戦略', technologies: [ { name: 'オフライン (Service Worker)', color: 'bg-gray-300 text-gray-900' } ] },
+        { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
     ],
   },
   {
@@ -388,8 +419,10 @@ export const apps: App[] = [
     features: [ 'requestAnimationFrameによる滑らかなゲームループ', 'Vueのリアクティブな状態管理とCanvas APIの連携', '矩形ベースのシンプルな衝突判定アルゴリズム', 'パドル幅やボールの色を動的に変更できるカスタマイズ機能', 'PWA対応によるオフラインでのプレイ', ],
     stack: [
         { category: 'アーキテクチャ', technologies: [ { name: 'PWA', color: 'bg-amber-300 text-amber-900' } ] },
-        { category: 'フロントエンド', technologies: [ { name: 'Vue 3 (Composition API)', color: 'bg-green-200 text-green-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] },
-        { category: '描画', technologies: [ { name: 'Canvas API', color: 'bg-red-300 text-red-900' } ] }
+        { category: 'フロントエンド', technologies: [ { name: 'Vue 3 (Composition API)', color: 'bg-green-200 text-green-800' } ] },
+        { category: '描画', technologies: [ { name: 'Canvas API', color: 'bg-red-300 text-red-900' } ] },
+        { category: 'キャッシュ戦略', technologies: [ { name: 'オフライン (Service Worker)', color: 'bg-gray-300 text-gray-900' } ] },
+        { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
     ],
   },
   {
@@ -407,8 +440,10 @@ export const apps: App[] = [
     features: [ 'VueからReact/Next.jsへのフレームワーク移植研究', 'React Hooks (`useState`, `useRef`, `useEffect`) による状態管理', 'requestAnimationFrameによる滑らかなゲームループ', '矩形ベースのシンプルな衝突判定アルゴリズム', 'PWA対応によるオフラインでのプレイ', ],
     stack: [
         { category: 'アーキテクチャ', technologies: [ { name: 'PWA', color: 'bg-amber-300 text-amber-900' } ] },
-        { category: 'フロントエンド', technologies: [ { name: 'Next.js', color: 'bg-black text-white' }, { name: 'React (Hooks)', color: 'bg-cyan-200 text-cyan-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] },
-        { category: '描画', technologies: [ { name: 'Canvas API', color: 'bg-red-300 text-red-900' } ] }
+        { category: 'フロントエンド', technologies: [ { name: 'Next.js', color: 'bg-black text-white' }, { name: 'React (Hooks)', color: 'bg-cyan-200 text-cyan-800' } ] },
+        { category: '描画', technologies: [ { name: 'Canvas API', color: 'bg-red-300 text-red-900' } ] },
+        { category: 'キャッシュ戦略', technologies: [ { name: 'オフライン (Service Worker)', color: 'bg-gray-300 text-gray-900' } ] },
+        { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
     ],
   },
   {
@@ -444,8 +479,10 @@ export const apps: App[] = [
     features: [ '二乗数と掛け算の2つの練習モード', '掛け算の筆算過程を視覚的に分解・補助するUI', 'Vueのリアクティビティを活用したリアルタイムな入力・計算処理', '動的な問題生成アルゴリズム', ],
     stack: [
         { category: 'アーキテクチャ', technologies: [ { name: 'PWA', color: 'bg-amber-300 text-amber-900' } ] },
-        { category: 'フロントエンド', technologies: [ { name: 'Vue 3 (Composition API)', color: 'bg-green-200 text-green-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] },
-        { category: 'コアロジック', technologies: [ { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' } ] }
+        { category: 'フロントエンド', technologies: [ { name: 'Vue 3 (Composition API)', color: 'bg-green-200 text-green-800' } ] },
+        { category: 'コアロジック', technologies: [ { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' } ] },
+        { category: 'キャッシュ戦略', technologies: [ { name: 'オフライン (Service Worker)', color: 'bg-gray-300 text-gray-900' } ] },
+        { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
     ],
   },
   {
@@ -463,8 +500,10 @@ export const apps: App[] = [
     features: [ 'Vue 3のリアクティブなデータによる盤面描画', '最後に置かれたコマを起点とする効率的な勝利判定アルゴリズム', '「一手戻す（Undo）」機能', 'ゲームのリスタート機能', ],
     stack: [
         { category: 'アーキテクチャ', technologies: [ { name: 'PWA', color: 'bg-amber-300 text-amber-900' } ] },
-        { category: 'フロントエンド', technologies: [ { name: 'Vue 3 (Composition API)', color: 'bg-green-200 text-green-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] },
-        { category: 'コアロジック', technologies: [ { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' } ] }
+        { category: 'フロントエンド', technologies: [ { name: 'Vue 3 (Composition API)', color: 'bg-green-200 text-green-800' } ] },
+        { category: 'コアロジック', technologies: [ { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' } ] },
+        { category: 'キャッシュ戦略', technologies: [ { name: 'オフライン (Service Worker)', color: 'bg-gray-300 text-gray-900' } ] },
+        { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
     ],
   },
   {
@@ -482,9 +521,11 @@ export const apps: App[] = [
     features: [ 'Vue 3のComposition APIによる複雑な状態管理', 'HTML5 Drag and Drop APIによる直感的なカード操作', '「一手戻す」機能と、ゲームクリア時の「自動完了」機能', 'ダブルクリックによる組札への自動移動', ],
     stack: [
         { category: 'アーキテクチャ', technologies: [ { name: 'PWA', color: 'bg-amber-300 text-amber-900' } ] },
-        { category: 'フロントエンド', technologies: [ { name: 'Vue 3 (Composition API)', color: 'bg-green-200 text-green-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] },
+        { category: 'フロントエンド', technologies: [ { name: 'Vue 3 (Composition API)', color: 'bg-green-200 text-green-800' } ] },
         { category: '状態管理', technologies: [ { name: 'State Management', color: 'bg-red-200 text-red-800' } ] },
-        { category: 'Web API', technologies: [ { name: 'Drag & Drop API', color: 'bg-yellow-200 text-yellow-800' } ] }
+        { category: 'Web API', technologies: [ { name: 'Drag & Drop API', color: 'bg-yellow-200 text-yellow-800' } ] },
+        { category: 'キャッシュ戦略', technologies: [ { name: 'オフライン (Service Worker)', color: 'bg-gray-300 text-gray-900' } ] },
+        { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
     ],
   },
   {
@@ -502,8 +543,10 @@ export const apps: App[] = [
     features: [ '1～10桁まで対応した動的なゲーム設定', '練習モードと、戦略的アルゴリズムを持つPC対戦モード', 'Web Workerによるノンブロッキングな候補絞り込み計算', 'localStorageによるゲーム履歴の永続化', ],
     stack: [
         { category: 'アーキテクチャ', technologies: [ { name: 'PWA', color: 'bg-amber-300 text-amber-900' } ] },
-        { category: 'フロントエンド', technologies: [ { name: 'Vue 3 (Composition API)', color: 'bg-green-200 text-green-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] },
-        { category: 'コアロジック', technologies: [ { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' }, { name: 'Web Workers', color: 'bg-orange-300 text-orange-900' } ] }
+        { category: 'フロントエンド', technologies: [ { name: 'Vue 3 (Composition API)', color: 'bg-green-200 text-green-800' } ] },
+        { category: 'コアロジック', technologies: [ { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' }, { name: 'Web Workers', color: 'bg-orange-300 text-orange-900' } ] },
+        { category: 'キャッシュ戦略', technologies: [ { name: 'オフライン (Service Worker)', color: 'bg-gray-300 text-gray-900' }, { name: 'クライアントサイド (localStorage)', color: 'bg-gray-300 text-gray-900' } ] },
+        { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
     ],
   },
   {
@@ -521,8 +564,10 @@ export const apps: App[] = [
     features: [ 'VueからReact/Next.jsへのフレームワーク移植研究', 'React Hooks (`useState`, `useRef`, `useEffect`) による状態管理', '`useMemo`による重い計算処理のメモ化・最適化', 'localStorageへのゲーム履歴の永続化', ],
     stack: [
         { category: 'アーキテクチャ', technologies: [ { name: 'PWA', color: 'bg-amber-300 text-amber-900' } ] },
-        { category: 'フロントエンド', technologies: [ { name: 'Next.js', color: 'bg-black text-white' }, { name: 'React (Hooks)', color: 'bg-cyan-200 text-cyan-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] },
-        { category: 'パフォーマンス', technologies: [ { name: '`useMemo`', color: 'bg-green-300 text-green-900' } ] }
+        { category: 'フロントエンド', technologies: [ { name: 'Next.js', color: 'bg-black text-white' }, { name: 'React (Hooks)', color: 'bg-cyan-200 text-cyan-800' } ] },
+        { category: 'パフォーマンス', technologies: [ { name: '`useMemo`', color: 'bg-green-300 text-green-900' } ] },
+        { category: 'キャッシュ戦略', technologies: [ { name: 'オフライン (Service Worker)', color: 'bg-gray-300 text-gray-900' }, { name: 'クライアントサイド (localStorage)', color: 'bg-gray-300 text-gray-900' } ] },
+        { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
     ],
   },
   {
@@ -542,7 +587,8 @@ export const apps: App[] = [
         { category: 'アーキテクチャ', technologies: [ { name: 'Jamstack', color: 'bg-pink-300 text-pink-900' } ] },
         { category: 'フロントエンド', technologies: [ { name: 'Vue 3', color: 'bg-green-200 text-green-800' } ] },
         { category: 'バックエンド (Serverless)', technologies: [ { name: 'Vercel Functions (BFF)', color: 'bg-black text-white' } ] },
-        { category: 'データベース', technologies: [ { name: 'Supabase', color: 'bg-emerald-300 text-emerald-900' }, { name: 'PostgreSQL', color: 'bg-sky-300 text-sky-900' } ] }
+        { category: 'データベース', technologies: [ { name: 'Supabase', color: 'bg-emerald-300 text-emerald-900' }, { name: 'PostgreSQL', color: 'bg-sky-300 text-sky-900' } ] },
+        { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
     ],
   },
 ];

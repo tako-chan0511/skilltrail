@@ -670,7 +670,6 @@ export const apps: App[] = [
       { name: 'Logic', color: 'bg-red-200 text-red-800' },
     ],
   },
-  // --- ★★★ ここから新規追加 ★★★ ---
   {
     id: 28,
     title: 'Hit & Blow (React/Next.js版)',
@@ -695,6 +694,34 @@ export const apps: App[] = [
       { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' },
       { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' },
       { name: 'Performance', color: 'bg-green-300 text-green-900' },
+    ],
+  },
+  // --- ★★★ ここから新規追加 ★★★ ---
+  {
+    id: 29,
+    title: 'ゲームハブ (Toppage)',
+    description: 'これまで開発した25個のアプリケーションを集約したポータルサイト。静的サイトジェネレーターで構築されたフロントエンドと、Vercel Serverless Functions及びSupabase(PostgreSQL)で構成されたバックエンドを組み合わせた、モダンなJamstackアーキテクチャを採用。各アプリの参照数や「いいね」数を動的に管理・表示します。',
+    screenshot: '',
+    appUrl: 'https://toppage-five.vercel.app/',
+    githubUrl: 'https://github.com/tako-chan0511/toppage/',
+    tags: ['Jamstack', 'Vercel', 'Supabase', 'BFF', 'Vue 3'],
+    learnings: {
+      challenge: '静的サイトとして高速な表示を実現しつつ、各ゲームカードの参照数や「いいね」数といった動的なデータをどう扱うか。クライアントから直接DBにアクセスすると、セキュリティやパフォーマンスに問題が生じる。',
+      solution: 'フロントエンドとDBの間にVercel Serverless Functionsで構築したBFF(Backend for Frontend)層を設置。フロントエンドはBFFに対してAPIリクエストを送り、BFFがSupabaseクライアントを介して安全にDBと通信します。DBの接続情報はサーバーレス関数の環境変数に設定することで、クライアントサイドへの漏洩を完全に防ぎました。この構成により、静的サイトのメリットを享受しつつ、動的な機能をセキュアかつスケーラブルに実現できました。',
+    },
+    features: [
+      'Vercel Serverless FunctionsによるAPIエンドポイント構築',
+      'Supabase(PostgreSQL)による参照数・いいね数の永続化',
+      '環境変数を利用した安全なDB認証情報管理',
+      '非同期データフェッチによる動的なカウント表示',
+      '全25個の自作アプリケーションへのランディングページ機能',
+    ],
+    stack: [
+      { name: 'Vue 3', color: 'bg-green-200 text-green-800' },
+      { name: 'Vercel (Serverless)', color: 'bg-black text-white' },
+      { name: 'Supabase', color: 'bg-emerald-300 text-emerald-900' },
+      { name: 'PostgreSQL', color: 'bg-sky-300 text-sky-900' },
+      { name: 'Jamstack', color: 'bg-pink-300 text-pink-900' },
     ],
   },
 ];

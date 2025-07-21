@@ -440,7 +440,6 @@ export const apps: App[] = [
       { name: 'State Management', color: 'bg-red-200 text-red-800' },
     ],
   },
-  // --- ★★★ ここから新規追加 ★★★ ---
   {
     id: 19,
     title: 'マインスイーパ N×M',
@@ -462,6 +461,33 @@ export const apps: App[] = [
     ],
     stack: [
       { name: 'Vue 3', color: 'bg-green-200 text-green-800' },
+      { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' },
+      { name: 'PWA', color: 'bg-amber-300 text-amber-900' },
+      { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' },
+    ],
+  },
+  // --- ★★★ ここから新規追加 ★★★ ---
+  {
+    id: 20,
+    title: 'テトリス (Tetris)',
+    description: 'Vue 3のComposition APIとリアクティブな状態管理を駆使して実装された、クラシックなテトリスゲーム。ゲームループ、テトリミノ（ブロック）の移動・回転ロジック、衝突判定、そして行の消去といった、リアルタイムゲームの基本的な要素がすべて純粋なVueの機能で構築されています。',
+    screenshot: '',
+    appUrl: 'https://tako-chan0511.github.io/tetris/',
+    githubUrl: 'https://github.com/tako-chan0511/tetris/',
+    tags: ['Vue 3', 'GameDev', 'Algorithm', 'PWA'],
+    learnings: {
+      challenge: 'ゲームの状態（盤面、現在のテトリミノの位置・形状、スコア等）をVueのリアクティブシステムとどう同期させるか。特に、`setInterval`で実行されるゲームループ内で状態を更新し、それをDOMに効率的に反映させること、そしてテトリミノの回転時に壁や他のブロックとの衝突を正確に判定する「ウォールキック」の実装が課題でした。',
+      solution: '盤面の状態をVueの`ref`で定義した二次元配列で管理。ゲームループは`setInterval`で実装し、ループごとにテトリミノを1段落下させるロジック（配列の更新）を実行します。Vueのリアクティビティにより、この配列への変更は自動的にDOM（CSS Gridで構築した盤面）に反映されます。衝突判定や回転ロジックは、移動・回転後の仮の座標を計算し、それが盤面の境界内かつ他のブロックと重ならないかをチェックする純粋な関数として分離しました。',
+    },
+    features: [
+      'setIntervalによる安定したゲームループ制御',
+      'テトリミノの移動・回転・衝突判定アルゴリズム',
+      'キーボードとタッチ操作の両方に対応したレスポンシブなコントロール',
+      'ライン消去とスコア・レベルアップ機能',
+      'PWA対応によるオフラインでのプレイ',
+    ],
+    stack: [
+      { name: 'Vue 3 (Composition API)', color: 'bg-green-200 text-green-800' },
       { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' },
       { name: 'PWA', color: 'bg-amber-300 text-amber-900' },
       { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' },

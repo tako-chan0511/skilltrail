@@ -230,7 +230,6 @@ export const apps: App[] = [
       { name: 'PWA', color: 'bg-amber-300 text-amber-900' },
     ],
   },
-  // --- ★★★ ここから新規追加 ★★★ ---
   {
     id: 11,
     title: 'MelodyCanvas',
@@ -256,6 +255,35 @@ export const apps: App[] = [
       { name: 'VexFlow', color: 'bg-purple-400 text-white' },
       { name: 'Pinia', color: 'bg-yellow-400 text-black' },
       { name: 'MIDI-Writer-JS', color: 'bg-gray-400 text-white' },
+    ],
+  },
+  // --- ★★★ ここから新規追加 ★★★ ---
+  {
+    id: 12,
+    title: 'ラッキーロトシミュレーション',
+    description: 'Vue 3とNaive UIで構築された、多機能な宝くじシミュレーション＆管理ツール。Vue RouterによるSPA構成で、各くじ（ナンバーズ4、ロト6）のシミュレーション画面や購入履歴、統計データ画面をコンポーネントとして明確に分離。Piniaストアと永続化プラグインを活用し、すべてのユーザーデータをクライアントサイドで安全に管理します。',
+    screenshot: '',
+    appUrl: 'https://tako-chan0511.github.io/luckylotto',
+    githubUrl: 'https://github.com/tako-chan0511/luckylotto',
+    tags: ['Vue 3', 'Pinia', 'Vue Router', 'Naive UI', 'Chart.js'],
+    learnings: {
+      challenge: 'シミュレーションのエントリー、購入履歴、統計データなど、アプリ全体で共有・連動させるべき状態が多岐にわたったこと。特に、複数のコンポーネントから状態を変更し、それをリアクティブに別のコンポーネントのグラフ描画に反映させるロジックが複雑化しました。',
+      solution: 'Piniaを導入し、状態管理のロジックをコンポーネントから完全に分離。購入履歴や統計データなどをストアに集約し、各コンポーネントはストアのデータを参照・更新するだけのシンプルな責務にしました。`pinia-plugin-persistedstate`を組み合わせることで、リロードしてもデータが消えない永続化を容易に実現。これにより、複雑な状態遷移も非常に見通しよく管理できるようになりました。',
+    },
+    features: [
+      'ナンバーズ4・ロト6の抽選アルゴリズムシミュレーション',
+      'Vue RouterによるマルチページSPA構成',
+      'Piniaストアによる状態の一元管理とlocalStorageへの永続化',
+      'Naive UIコンポーネントによるリッチなUI構築',
+      'Chart.jsによる統計データのグラフ可視化',
+    ],
+    stack: [
+      { name: 'Vue 3', color: 'bg-green-200 text-green-800' },
+      { name: 'Pinia', color: 'bg-yellow-400 text-black' },
+      { name: 'Vue Router', color: 'bg-green-300 text-green-900' },
+      { name: 'Naive UI', color: 'bg-teal-200 text-teal-800' },
+      { name: 'Chart.js', color: 'bg-pink-200 text-pink-800' },
+      { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' },
     ],
   },
 ];

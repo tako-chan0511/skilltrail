@@ -44,14 +44,14 @@ export const apps: App[] = [
       { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
     ],
   },
-  {
+ {
     id: 4,
     title: 'AIマーケットアナリスト',
     description: '企業名を入力すると、関連ニュースをGNews API経由で収集・分析する企業分析ツール。サーバーサイドキャッシュによる高速化と、RAG（検索拡張生成）による対話的な深掘り分析が特徴。Geminiが生成するレポートはMarkdown形式で表示され、重要キーワードがハイライトされるなど、高度なUX/UIを実現しています。',
     screenshot: '',
     appUrl: 'https://hara0511my-market-analyst.vercel.app/',
     githubUrl: 'https://github.com/tako-chan0511/my-market-analyst',
-    tags: ['RAG', 'Caching', 'Serverless', 'Gemini', 'Markdown', 'Vite', 'TypeScript'],
+    tags: ['RAG', 'Caching', 'Serverless', 'Gemini API', 'Markdown', 'Vite', 'TypeScript', 'GNews API'],
     learnings: {
       challenge: '同一企業への分析リクエストが頻発した場合の、APIコストの増大とレスポンス遅延。また、一般的なLLMの知識だけでは、直近の企業ニュースに基づいた専門的な質疑応答が困難でした。',
       solution: 'サーバーレス関数（BFF）にキャッシュ層を導入。GNewsへのリクエストとGeminiによる初期分析結果を、企業名をキーとして1日間キャッシュします。これによりAPIコストを削減し、2回目以降のアクセスを高速化しました。追加質問に対しては、収集したニュース記事本文を知識源とするRAGパイプラインを起動。これにより、最新情報に基づいた専門家レベルの対話を実現しました。',
@@ -60,7 +60,7 @@ export const apps: App[] = [
     stack: [
       { category: 'フロントエンド', technologies: [ { name: 'Vue 3', color: 'bg-green-200 text-green-800' }, { name: 'marked.js', color: 'bg-gray-700 text-white' } ] },
       { category: 'バックエンド (Serverless)', technologies: [ { name: 'Vercel Functions (BFF)', color: 'bg-black text-white' } ] },
-      { category: 'キャッシュ戦略', technologies: [ { name: 'サーバーサイドキャッシュ', color: 'bg-gray-300 text-gray-900' } ] },
+      { category: 'キャッシュ戦略 (ストレージ)', technologies: [ { name: 'Vercel KV (Redis)', color: 'bg-black text-white' } ] },
       { category: 'AI', technologies: [ { name: 'Gemini API', color: 'bg-red-200 text-red-800' } ] },
       { category: '外部API', technologies: [ { name: 'GNews API', color: 'bg-blue-800 text-white' } ] },
       { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
@@ -73,7 +73,7 @@ export const apps: App[] = [
     screenshot: '',
     appUrl: 'https://hara0511my-daily-digest.vercel.app/',
     githubUrl: 'https://github.com/tako-chan0511/my-daily-digest',
-    tags: ['RAG', 'Web Scraping', '3-pane UI', 'Gemini', 'Markdown', 'Vite', 'TypeScript'],
+    tags: ['RAG', 'Web Scraping', '3-pane UI', 'Gemini API', 'Markdown', 'Vite', 'TypeScript', 'GNews API'],
     learnings: {
       challenge: '多様なHTML構造を持つニュースサイトからの安定した本文抽出。また、単なる要約に留まらず、ユーザーが記事内容について対話的に深掘りできる仕組みの構築が技術的な課題でした。',
       solution: 'バックエンドでPuppeteerを用いたスクレイピング関数をサーバーレスで実行し、本文を抽出してMarkdown形式に変換。ユーザーが記事を選択した際、この抽出テキストをその場限りの知識ベースとするRAGパイプラインを起動します。これにより、Geminiは記事の文脈に沿った正確な回答を生成でき、ユーザーは「この記事の〇〇について、もっと詳しく教えて」といった対話的な深掘りが可能になりました。',
@@ -94,7 +94,7 @@ export const apps: App[] = [
     screenshot: '',
     appUrl: 'https://hara0511ai-stat-analyst.vercel.app/',
     githubUrl: 'https://github.com/tako-chan0511/ai-stat-analyst',
-    tags: ['e-stat API', 'BFF', 'Serverless', 'Gemini', 'データ可視化', 'Vite', 'TypeScript'],
+    tags: ['e-stat API', 'BFF', 'Serverless', 'Gemini API', 'データ可視化', 'Vite', 'TypeScript'],
     learnings: {
       challenge: 'e-stat APIのレスポンスは階層が深く、そのままではフロントエンドでの扱いやAIへの入力が困難。また、APIキーをクライアントサイドに露出させることはできない。',
       solution: 'Vercel FunctionsでBFF（Backend for Frontend）層を構築。BFFがAPIキーを安全に管理し、e-statからのRAWデータを必要な情報（項目名、値、単位など）だけに絞り込んだシンプルなJSONに加工してからフロントに返却。これによりフロントエンドの実装を簡略化し、AIには分析に不要なメタデータを与えないことで、トークン効率と分析精度の向上を両立させた。',
@@ -115,7 +115,7 @@ export const apps: App[] = [
     screenshot: '',
     appUrl: '#',
     githubUrl: '#',
-    tags: ['RAG', 'Web Scraping', 'Serverless', 'Gemini', 'Prompt Engineering', 'Vite', 'TypeScript'],
+    tags: ['RAG', 'Web Scraping', 'Serverless', 'Gemini API', 'Prompt Engineering', 'Vite', 'TypeScript'],
     learnings: {
       challenge: '静的な知識しか持たないLLMに、常に変化する最新の政党の政策について分析させること。また、Webスクレイピングは対象サイトの構造変更に弱く、メンテナンスコストが高い点が課題でした。',
       solution: 'アーキテクチャを工夫し、Vercel Functions等のサーバーレス環境で定期的にスクレイピング処理を実行。収集したテキストデータをチャンク（断片）に分割し、ベクトルデータベースに保存するRAGパイプラインを構築しました。ユーザーからの質問に対し、関連性の高いテキストチャンクを検索してプロンプトに埋め込むことで、Geminiは常に最新の一次情報源に基づいて回答を生成できます。これにより、LLMの知識を動的に拡張し、ハルシネーション（幻覚）を大幅に抑制することに成功しました。',
@@ -161,7 +161,7 @@ export const apps: App[] = [
       challenge: 'ユーザー毎にデータを完全に分離するセキュアなマルチテナントDBの実現と、認証状態に応じて「本番モード」と「サンドボックスモード」をシームレスに切り替える状態管理が課題でした。',
       solution: 'SupabaseのRLS（行単位セキュリティ）ポリシーを活用。「`auth.uid() = user_id`」というルールをテーブルに適用し、SQLレベルでユーザーが自身のデータしか操作できないよう強制しました。フロントエンドでは、ユーザーの認証状態をリアクティブに監視し、未認証時は`localStorage`をデータソースとするサンドボックスモード、認証後はSupabaseクライアントをデータソースとする本番モードに動的に切り替えるロジックを実装しました。',
     },
-    features: [ 'Supabase Authによるメール・パスワード認証', 'RLSによるユーザーデータの厳格なアクセス制御', 'キーワードと複数タグによるAND/OR検索機能', 'Service Workerを利用したPWA対応（オフラインキャッシュ）', '認証不要で試せるサンドボックスモード', 'PWA対応（オフライン動作、インストール機能）' ],
+    features: [ 'Supabase Authによるメール・パスワード認証', 'RLSによるユーザーデータの厳格なアクセス制御', 'キーワードと複数タグによるAND/OR検索機能', '認証不要で試せるサンドボックスモード', 'PWA対応（オフライン動作、インストール機能）' ],
     stack: [
       { category: 'フロントエンド', technologies: [ { name: 'Vue 3', color: 'bg-green-200 text-green-800' }, { name: 'Tailwind CSS', color: 'bg-sky-200 text-sky-800' } ] },
       { category: 'バックエンド (BaaS)', technologies: [ { name: 'Supabase Auth', color: 'bg-emerald-300 text-emerald-900' } ] },
@@ -177,12 +177,12 @@ export const apps: App[] = [
     screenshot: '',
     appUrl: 'https://hara0511weather-app.vercel.app/',
     githubUrl: 'https://github.com/tako-chan0511/weather-app',
-    tags: ['Web API', 'Leaflet.js', 'PWA', 'Vanilla JS', 'Vite', 'TypeScript'],
+    tags: ['Web API', 'Leaflet.js', 'PWA', 'Vanilla JS', 'Vite', 'TypeScript', 'LocationIQ API'],
     learnings: {
       challenge: '複数の外部サービス（API、CDN）に依存するため、それぞれの非同期処理の順序制御とエラーハンドリングが複雑化。特に、ジオコーディングAPIの成功を待ってから気象情報APIを呼び出す、といった処理の連鎖をいかに綺麗に書くかが課題でした。',
       solution: 'async/await構文を全面的に採用し、非同期処理のフローを同期的で読みやすいコードに改善。APIリクエスト部分を責務ごとにモジュール化し、例えば`LocationService`が緯度経度を返し、`WeatherService`がそれを引き受ける形に設計。これにより、各サービスは自身の役割に専念でき、コードの再利用性とテスト容易性が向上しました。',
     },
-    features: [ '都市名・住所・地図クリックによる多彩な地点指定', 'Leaflet.jsによるインタラクティブ地図表示', 'OpenWeatherMap APIによる詳細な気象データ取得', 'tone.jsによる気象サウンドの再生', 'PWA対応によるネイティブアプリのような体験', 'PWA対応（オフライン動作、インストール機能）' ],
+    features: [ '都市名・住所・地図クリックによる多彩な地点指定', 'Leaflet.jsによるインタラクティブ地図表示', 'OpenWeatherMap APIによる詳細な気象データ取得', 'tone.jsによる気象サウンドの再生', 'PWA対応（オフライン動作、インストール機能）' ],
     stack: [
       { category: 'フロントエンド', technologies: [ { name: 'Vue 3', color: 'bg-green-200 text-green-800' } ] },
       { category: '外部API', technologies: [ { name: 'OpenWeatherMap API', color: 'bg-blue-500 text-white' }, { name: 'LocationIQ API', color: 'bg-purple-500 text-white' } ] },
@@ -245,7 +245,7 @@ export const apps: App[] = [
     },
     features: [ 'ドラッグ＆ドロップによる直感的な要素配置', 'スライダーやカラーピッカーによるリアルタイムなスタイル編集', '変更と即座に同期するCSSコードの自動生成', 'FlexboxやGridなど、主要なレイアウトシステムの視覚的学習', 'PWA対応（オフライン動作、インストール機能）' ],
     stack: [
-      { category: 'フロントエンド', technologies: [ { name: 'Vue 3', color: 'bg-green-200 text-green-800' }, { name: 'HTML5', color: 'bg-orange-200 text-orange-800' }, { name: 'CSS3', color: 'bg-blue-200 text-blue-800' } ] },
+      { category: 'フロントエンド', technologies: [ { name: 'Vue 3', color: 'bg-green-200 text-green-800' } ] },
       { category: 'ライブラリ', technologies: [ { name: 'Interact.js', color: 'bg-pink-300 text-pink-900' } ] },
       { category: 'キャッシュ戦略', technologies: [ { name: 'オフライン (Service Worker)', color: 'bg-gray-300 text-gray-900' } ] },
       { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
@@ -263,9 +263,9 @@ export const apps: App[] = [
       challenge: 'ゲームのメインループ（落下処理、入力判定、スコア更新）と、DOMの描画（単語の移動、キーボードのハイライト）を、パフォーマンスを損なうことなく滑らかに同期させること。特に、フレーム毎の状態更新と描画ロジックの分離が課題でした。',
       solution: '`requestAnimationFrame`で安定したゲームループを構築。ゲームの状態（スコア、レベル、単語の位置など）をすべて単一の`gameState`オブジェクトで管理。ループ内では、まず状態を更新するロジックを実行し、その変更された`gameState`に基づいてDOM要素のスタイルを一括で更新する、という明確な責務分離を行いました。これにより、不要な再描画を防ぎ、パフォーマンスを最適化しました。',
     },
-    features: [ 'requestAnimationFrameによる滑らかなゲームループ', '練習モードと、難易度別のゲームモード', '入力キーと指位置のリアルタイムアシスト表示', '正解・不正解時のサウンドエフェクト', 'PWA対応によるオフライン動作とインストール機能', 'PWA対応（オフライン動作、インストール機能）' ],
+    features: [ 'requestAnimationFrameによる滑らかなゲームループ', '練習モードと、難易度別のゲームモード', '入力キーと指位置のリアルタイムアシスト表示', '正解・不正解時のサウンドエフェクト', 'PWA対応（オフライン動作、インストール機能）' ],
     stack: [
-      { category: 'フロントエンド', technologies: [ { name: 'Vue 3', color: 'bg-green-200 text-green-800' }, { name: 'HTML5', color: 'bg-orange-200 text-orange-800' }, { name: 'CSS3', color: 'bg-blue-200 text-blue-800' } ] },
+      { category: 'フロントエンド', technologies: [ { name: 'Vue 3', color: 'bg-green-200 text-green-800' } ] },
       { category: 'キャッシュ戦略', technologies: [ { name: 'オフライン (Service Worker)', color: 'bg-gray-300 text-gray-900' } ] },
       { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
     ],
@@ -282,9 +282,9 @@ export const apps: App[] = [
       challenge: '再帰的なバックトラッキング（深さ優先探索）アルゴリズムによる問題生成と解答ロジックの実装。特に、人間が解ける範囲の良問を生成するための適切なヒント数の調整と、トレーニングモードで特定の解法パターン（例：予約、三国同盟）を盤面から認識させるロジックの構築が複雑でした。',
       solution: '数独のロジック（検証、解答、パターン認識）をUIのDOM操作から完全に分離したモジュールとして設計。盤面の状態は多次元配列で管理し、すべての操作はこの配列を更新する関数を介して行われます。UIは状態配列の変更を検知して再描画するだけのシンプルな構造にすることで、複雑なアルゴリズムの実装に集中できました。',
     },
-    features: [ 'バックトラッキング法による問題生成とソルバー機能', '解法テクニックをステップ・バイ・ステップで学べるトレーニングモード', '候補数字のメモ機能や、矛盾箇所のハイライトなどの盤面サポート', 'localStorageを利用した盤面の状態保存・復元機能', 'PWA対応によるオフラインでのプレイ', 'PWA対応（オフライン動作、インストール機能）' ],
+    features: [ 'バックトラッキング法による問題生成とソルバー機能', '解法テクニックをステップ・バイ・ステップで学べるトレーニングモード', '候補数字のメモ機能や、矛盾箇所のハイライトなどの盤面サポート', 'localStorageを利用した盤面の状態保存・復元機能', 'PWA対応（オフライン動作、インストール機能）' ],
     stack: [
-      { category: 'フロントエンド', technologies: [ { name: 'Vue 3', color: 'bg-green-200 text-green-800' }, { name: 'HTML5', color: 'bg-orange-200 text-orange-800' }, { name: 'CSS3', color: 'bg-blue-200 text-blue-800' } ] },
+      { category: 'フロントエンド', technologies: [ { name: 'Vue 3', color: 'bg-green-200 text-green-800' } ] },
       { category: 'コアロジック', technologies: [ { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' } ] },
       { category: 'キャッシュ戦略', technologies: [ { name: 'オフライン (Service Worker)', color: 'bg-gray-300 text-gray-900' }, { name: 'クライアントサイド (localStorage)', color: 'bg-gray-300 text-gray-900' } ] },
       { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
@@ -302,7 +302,7 @@ export const apps: App[] = [
       challenge: '盤面サイズが可変であるため、石を置ける場所の判定や、石を裏返すロジックを、特定の盤面サイズに依存しない汎用的なアルゴリズムとして実装する必要があったこと。8方向すべてに対して、どこまで石を裏返せるかを動的に計算するロジックの設計が最も挑戦的でした。',
       solution: '盤面の状態を二次元配列で管理。ユーザーがマスをクリックした際、そのマスを起点として8方向（上下左右、斜め4方向）への探索をループで実行する関数を実装。各方向に対して、相手の石が連続し、その先に自分の石が存在するかを判定し、裏返せる石の座標をリストアップします。このロジックを盤面サイズに依存しない形にしたことで、任意のサイズの盤面に対応可能となりました。',
     },
-    features: [ '4x4から24x24までの動的な盤面サイズ変更機能', '石を置ける場所をハイライト表示するサポートモード', '「一手戻す」機能とゲーム履歴の表示', 'PWA対応によるオフラインでのプレイ', 'PWA対応（オフライン動作、インストール機能）' ],
+    features: [ '4x4から24x24までの動的な盤面サイズ変更機能', '石を置ける場所をハイライト表示するサポートモード', '「一手戻す」機能とゲーム履歴の表示', 'PWA対応（オフライン動作、インストール機能）' ],
     stack: [
       { category: 'フロントエンド', technologies: [ { name: 'Vue 3', color: 'bg-green-200 text-green-800' } ] },
       { category: 'コアロジック', technologies: [ { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' } ] },
@@ -322,9 +322,9 @@ export const apps: App[] = [
       challenge: 'パズルをランダムにシャッフルした際に、物理的に解くことが不可能な配置（アンソルバブル）になってしまう問題。また、N×Mという非正方格子におけるタイルの移動可能性判定ロジックの一般化が課題でした。',
       solution: '完全にランダムな配置を生成するのではなく、まず完成状態の盤面を用意し、そこから空きマスをランダムに動かす操作を数百回繰り返すことで、「解けることが保証された」シャッフル盤面を生成するアルゴリズムを採用しました。これにより、ユーザーが絶対にクリアできないという状況を回避しています。',
     },
-    features: [ '行と列を個別に指定できるN×M盤面生成機能', '解けることが保証されたシャッフルアルゴリズム', '空きマスと同じ行・列のタイルを一括で移動させる便利機能', 'PWA対応によるオフラインでのプレイ', 'PWA対応（オフライン動作、インストール機能）' ],
+    features: [ '行と列を個別に指定できるN×M盤面生成機能', '解けることが保証されたシャッフルアルゴリズム', '空きマスと同じ行・列のタイルを一括で移動させる便利機能', 'PWA対応（オフライン動作、インストール機能）' ],
     stack: [
-      { category: 'フロントエンド', technologies: [ { name: 'Vue 3', color: 'bg-green-200 text-green-800' }, { name: 'HTML5', color: 'bg-orange-200 text-orange-800' }, { name: 'CSS3', color: 'bg-blue-200 text-blue-800' } ] },
+      { category: 'フロントエンド', technologies: [ { name: 'Vue 3', color: 'bg-green-200 text-green-800' } ] },
       { category: 'コアロジック', technologies: [ { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' } ] },
       { category: 'キャッシュ戦略', technologies: [ { name: 'オフライン (Service Worker)', color: 'bg-gray-300 text-gray-900' } ] },
       { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
@@ -342,9 +342,9 @@ export const apps: App[] = [
       challenge: '2枚のカードをめくった後の評価中（正解か不正解かを見せるための数秒間）に、ユーザーが3枚目のカードをクリックできてしまう問題。これにより、ゲームのロジックが破綻する可能性がありました。',
       solution: 'ゲーム盤全体を覆う透明なオーバーレイ要素を用意し、CSSの`pointer-events`プロパティを活用。2枚目のカードをクリックした直後にオーバーレイを表示してマウスクリックを無効化（`pointer-events: auto`）し、評価が終わった後に`setTimeout`で非表示にする（`pointer-events: none`）ことで、意図しないユーザー操作を完全にブロックする堅牢なUIを実現しました。',
     },
-    features: [ '行と列を個別に指定できるN×M盤面生成機能', 'Fisher-Yatesアルゴリズムによるカードのシャッフル', '一定時間すべてのカードをプレビューできる「チラ見」機能', 'PWA対応によるオフラインでのプレイ', 'PWA対応（オフライン動作、インストール機能）' ],
+    features: [ '行と列を個別に指定できるN×M盤面生成機能', 'Fisher-Yatesアルゴリズムによるカードのシャッフル', '一定時間すべてのカードをプレビューできる「チラ見」機能', 'PWA対応（オフライン動作、インストール機能）' ],
     stack: [
-      { category: 'フロントエンド', technologies: [ { name: 'Vue 3', color: 'bg-green-200 text-green-800' }, { name: 'HTML5', color: 'bg-orange-200 text-orange-800' }, { name: 'CSS3', color: 'bg-blue-200 text-blue-800' } ] },
+      { category: 'フロントエンド', technologies: [ { name: 'Vue 3', color: 'bg-green-200 text-green-800' } ] },
       { category: '状態管理', technologies: [ { name: 'State Management', color: 'bg-red-200 text-red-800' } ] },
       { category: 'キャッシュ戦略', technologies: [ { name: 'オフライン (Service Worker)', color: 'bg-gray-300 text-gray-900' } ] },
       { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
@@ -362,7 +362,7 @@ export const apps: App[] = [
       challenge: 'ユーザーが最初にクリックしたマスとその周囲には地雷を配置しないロジックと、数字のないマスをクリックした際に隣接する安全なマスをすべて自動で開く、いわゆる「空白連鎖」の効率的な実装が課題でした。',
       solution: '地雷の配置処理を、ユーザーの最初のクリックイベントが発生した後に実行するアーキテクチャを採用。クリックされた座標を除外して地雷をランダムに配置することで、安全な初回クリックを保証しました。空白連鎖については、クリックされたマスを起点とするキュー（Queue）を用いた幅優先探索（BFS）アルゴリズムを実装。これにより、再帰呼び出しによるスタックオーバーフローのリスクを回避しつつ、連鎖的に開くマスを効率的に特定できました。',
     },
-    features: [ '幅・高さ・地雷数を自由に設定できる盤面生成機能', '最初のクリックが必ず安全マスになるアルゴリズム', '幅優先探索（BFS）による空白マスの連鎖展開', '右クリックによる旗立て・解除機能', 'PWA対応によるオフラインでのプレイ', 'PWA対応（オフライン動作、インストール機能）' ],
+    features: [ '幅・高さ・地雷数を自由に設定できる盤面生成機能', '最初のクリックが必ず安全マスになるアルゴリズム', '幅優先探索（BFS）による空白マスの連鎖展開', '右クリックによる旗立て・解除機能', 'PWA対応（オフライン動作、インストール機能）' ],
     stack: [
       { category: 'フロントエンド', technologies: [ { name: 'Vue 3', color: 'bg-green-200 text-green-800' } ] },
       { category: 'コアロジック', technologies: [ { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' } ] },
@@ -382,7 +382,7 @@ export const apps: App[] = [
       challenge: 'ゲームの状態（盤面、現在のテトリミノの位置・形状、スコア等）をVueのリアクティブシステムとどう同期させるか。特に、`setInterval`で実行されるゲームループ内で状態を更新し、それをDOMに効率的に反映させること、そしてテトリミノの回転時に壁や他のブロックとの衝突を正確に判定する「ウォールキック」の実装が課題でした。',
       solution: '盤面の状態をVueの`ref`で定義した二次元配列で管理。ゲームループは`setInterval`で実装し、ループごとにテトリミノを1段落下させるロジック（配列の更新）を実行します。Vueのリアクティビティにより、この配列への変更は自動的にDOM（CSS Gridで構築した盤面）に反映されます。衝突判定や回転ロジックは、移動・回転後の仮の座標を計算し、それが盤面の境界内かつ他のブロックと重ならないかをチェックする純粋な関数として分離しました。',
     },
-    features: [ 'setIntervalによる安定したゲームループ制御', 'テトリミノの移動・回転・衝突判定アルゴリズム', 'キーボードとタッチ操作の両方に対応したレスポンシブなコントロール', 'ライン消去とスコア・レベルアップ機能', 'PWA対応によるオフラインでのプレイ', 'PWA対応（オフライン動作、インストール機能）' ],
+    features: [ 'setIntervalによる安定したゲームループ制御', 'テトリミノの移動・回転・衝突判定アルゴリズム', 'キーボードとタッチ操作の両方に対応したレスポンシブなコントロール', 'ライン消去とスコア・レベルアップ機能', 'PWA対応（オフライン動作、インストール機能）' ],
     stack: [
       { category: 'フロントエンド', technologies: [ { name: 'Vue 3', color: 'bg-green-200 text-green-800' } ] },
       { category: 'コアロジック', technologies: [ { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' } ] },
@@ -402,7 +402,7 @@ export const apps: App[] = [
       challenge: 'Vueの宣言的なレンダリング（テンプレート）と、`<canvas>`の命令的な描画APIをどう融合させるか。特に、Vueのリアクティブな状態変更をトリガーにして、パフォーマンスを維持しつつ`<canvas>`全体を効率的に再描画するアーキテクチャの設計が課題でした。',
       solution: 'Vueコンポーネントの`onMounted`ライフサイクルフックで`<canvas>`のコンテキストを取得し、ゲームループを開始。ループ内では、ボールの移動や衝突判定などの物理演算ロジックを実行して`reactive`な状態オブジェクトを更新します。Vueの`watch`機能を使ってこの状態オブジェクトの変更を監視し、変更があったフレームでのみ`<canvas>`のクリアと再描画を行う関数を呼び出します。これにより、状態管理はVueに任せ、描画は`requestAnimationFrame`に最適化させることができました。',
     },
-    features: [ 'requestAnimationFrameによる滑らかなゲームループ', 'Vueのリアクティブな状態管理とCanvas APIの連携', '矩形ベースのシンプルな衝突判定アルゴリズム', 'パドル幅やボールの色を動的に変更できるカスタマイズ機能', 'PWA対応によるオフラインでのプレイ', 'PWA対応（オフライン動作、インストール機能）' ],
+    features: [ 'requestAnimationFrameによる滑らかなゲームループ', 'Vueのリアクティブな状態管理とCanvas APIの連携', '矩形ベースのシンプルな衝突判定アルゴリズム', 'パドル幅やボールの色を動的に変更できるカスタマイズ機能', 'PWA対応（オフライン動作、インストール機能）' ],
     stack: [
       { category: 'フロントエンド', technologies: [ { name: 'Vue 3', color: 'bg-green-200 text-green-800' } ] },
       { category: '描画', technologies: [ { name: 'Canvas API', color: 'bg-red-300 text-red-900' } ] },
@@ -422,7 +422,7 @@ export const apps: App[] = [
       challenge: 'Vueのリアクティブシステム（`reactive`）からReactのHooks（`useState`, `useRef`, `useEffect`）への思考の切り替え。特に、`requestAnimationFrame`のゲームループ内で毎フレーム更新されるボールの座標などを`useState`で管理すると、過剰な再レンダリングを引き起こしパフォーマンスが低下する問題がありました。',
       solution: 'パフォーマンスに影響するゲーム状態（ボールの座標や速度など）は`useRef`で管理し、再レンダリングを発生させずに値を保持・更新。スコアやライフなど、UIの表示更新が必要な状態のみを`useState`で管理する責務分離を行いました。ゲームループは`useEffect`内で開始・停止を制御することで、Reactのコンポーネントライフサイクルに沿った安全な実装を実現しました。',
     },
-    features: [ 'VueからReact/Next.jsへのフレームワーク移植研究', 'React Hooks (`useState`, `useRef`, `useEffect`) による状態管理', 'requestAnimationFrameによる滑らかなゲームループ', '矩形ベースのシンプルな衝突判定アルゴリズム', 'PWA対応によるオフラインでのプレイ', 'PWA対応（オフライン動作、インストール機能）' ],
+    features: [ 'VueからReact/Next.jsへのフレームワーク移植研究', 'React Hooks (`useState`, `useRef`, `useEffect`) による状態管理', 'requestAnimationFrameによる滑らかなゲームループ', '矩形ベースのシンプルな衝突判定アルゴリズム', 'PWA対応（オフライン動作、インストール機能）' ],
     stack: [
       { category: 'フロントエンド', technologies: [ { name: 'Next.js', color: 'bg-black text-white' }, { name: 'React (Hooks)', color: 'bg-cyan-200 text-cyan-800' } ] },
       { category: '描画', technologies: [ { name: 'Canvas API', color: 'bg-red-300 text-red-900' } ] },

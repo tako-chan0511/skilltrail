@@ -44,10 +44,10 @@ export const apps: App[] = [
       { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
     ],
   },
- {
+  {
     id: 4,
     title: 'AIマーケットアナリスト',
-    description: '企業名を入力すると、関連ニュースをGNews API経由で収集・分析する企業分析ツール。サーバーサイドキャッシュによる高速化と、RAG（検索拡張生成）による対話的な深掘り分析が特徴。Geminiが生成するレポートはMarkdown形式で表示され、重要キーワードがハイライトされるなど、高度なUX/UIを実現しています。',
+    description: 'Vector DBを使わない、動的・一時的な知識ベースでのRAGアーキテクチャを実装。企業名を入力すると、関連ニュースをGNews API経由でリアルタイムに収集。その収集したテキスト全体をその場限りの知識源としてGeminiに提供し、対話的な深掘り分析を可能にします。サーバーサイドキャッシュによる高速化も特徴です。',
     screenshot: '',
     appUrl: 'https://hara0511my-market-analyst.vercel.app/',
     githubUrl: 'https://github.com/tako-chan0511/my-market-analyst',
@@ -61,6 +61,7 @@ export const apps: App[] = [
       { category: 'フロントエンド', technologies: [ { name: 'Vue 3', color: 'bg-green-200 text-green-800' }, { name: 'marked.js', color: 'bg-gray-700 text-white' } ] },
       { category: 'バックエンド (Serverless)', technologies: [ { name: 'Vercel Functions (BFF)', color: 'bg-black text-white' } ] },
       { category: 'キャッシュ戦略 (ストレージ)', technologies: [ { name: 'Vercel KV (Redis)', color: 'bg-black text-white' } ] },
+      { category: 'RAG検索対象', technologies: [ { name: '動的ニュース記事 (キャッシュ)', color: 'bg-purple-200 text-purple-800' } ] },
       { category: 'AI', technologies: [ { name: 'Gemini API', color: 'bg-red-200 text-red-800' } ] },
       { category: '外部API', technologies: [ { name: 'GNews API', color: 'bg-blue-800 text-white' } ] },
       { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
@@ -69,7 +70,7 @@ export const apps: App[] = [
   {
     id: 5,
     title: 'AIニュースダイジェスト',
-    description: 'GNews APIで取得した記事リスト、サーバーレス関数によるWebスクレイピング、RAGを活用した対話型AIを組み合わせた高機能ニュースリーダー。UIは3ペイン構成を採用し、「記事リスト」「要約・本文（Markdown）」「AIとの対話」をシームレスに連携させ、快適な情報収集と深掘り体験の実現を目指しました。',
+    description: 'ユーザーが選択した単一の記事に特化した、動的なRAGアーキテクチャ。GNews APIで記事リストを取得後、選択された記事の本文をサーバーレス関数でスクレイピング。その抽出テキストをその場限りの知識源としてGeminiに与えることで、ユーザーは記事内容について「この記事の〇〇とは？」といった対話的な深掘りができます。',
     screenshot: '',
     appUrl: 'https://hara0511my-daily-digest.vercel.app/',
     githubUrl: 'https://github.com/tako-chan0511/my-daily-digest',
@@ -82,6 +83,7 @@ export const apps: App[] = [
     stack: [
       { category: 'フロントエンド', technologies: [ { name: 'Vue 3', color: 'bg-green-200 text-green-800' }, { name: 'marked.js', color: 'bg-gray-700 text-white' } ] },
       { category: 'バックエンド (Serverless)', technologies: [ { name: 'Vercel Functions', color: 'bg-black text-white' }, { name: 'Puppeteer', color: 'bg-teal-200 text-teal-800' } ] },
+      { category: 'RAG検索対象', technologies: [ { name: 'スクレイピングした記事本文', color: 'bg-purple-200 text-purple-800' } ] },
       { category: 'AI', technologies: [ { name: 'Gemini API', color: 'bg-red-200 text-red-800' } ] },
       { category: '外部API', technologies: [ { name: 'GNews API', color: 'bg-blue-800 text-white' } ] },
       { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
@@ -90,7 +92,7 @@ export const apps: App[] = [
   {
     id: 6,
     title: 'AI統計アナリスト',
-    description: '政府統計の総合窓口（e-stat）APIと連携し、日本の公的統計データを対話的に探索・分析するアプリケーション。バックエンド（BFF）がe-statの複雑なレスポンスを整形し、フロントエンドはデータの可視化とGeminiへの分析リクエストに専念するアーキテクチャを採用しました。',
+    description: '文章検索を行うRAGとは異なり、構造化データ（JSON）の分析に特化したAI活用アーキテクチャ。政府統計の総合窓口（e-stat）APIと連携し、BFFが統計データをAIが扱いやすい形式に整形。そのデータ全体をGeminiに渡して、相関関係や背景の深掘り分析を対話的に行います。',
     screenshot: '',
     appUrl: 'https://hara0511ai-stat-analyst.vercel.app/',
     githubUrl: 'https://github.com/tako-chan0511/ai-stat-analyst',
@@ -111,7 +113,7 @@ export const apps: App[] = [
   {
     id: 7,
     title: 'AI政権比較アナリスト',
-    description: 'サーバーレスアーキテクチャ上で動作するWebスクレイピング機能とRAG (Retrieval-Augmented Generation) を組み合わせ、特定のテーマに関する最新情報に基づいた高度な分析を生成するシステム。各政党の公式サイトから最新の政策情報をリアルタイムで収集・ベクトル化し、それを知識ベースとしてGeminiに提供することで、単なるWeb検索では得られない、文脈を理解した深い分析レポートを生成します。',
+    description: '大規模かつ恒久的な知識ベースを扱う、Vector DBを活用した本格的なRAGアーキテクチャ。各政党の公式サイトから最新の政策情報をリアルタイムで収集・ベクトル化してDBに蓄積。ユーザーの質問に対し、意味が最も近い情報をDBから検索してGeminiに提供することで、常に最新かつ正確な情報源に基づいた深い分析レポートを生成します。',
     screenshot: '',
     appUrl: 'https://hara0511jp-politics.vercel.app/',
     githubUrl: 'https://github.com/tako-chan0511/jp-politics',
@@ -125,7 +127,7 @@ export const apps: App[] = [
       { category: 'フロントエンド', technologies: [ { name: 'Vue 3', color: 'bg-green-200 text-green-800' } ] },
       { category: 'バックエンド (Serverless)', technologies: [ { name: 'Vercel Functions', color: 'bg-black text-white' }, { name: 'Puppeteer', color: 'bg-teal-200 text-teal-800' } ] },
       { category: 'AI', technologies: [ { name: 'Gemini API', color: 'bg-red-200 text-red-800' } ] },
-      { category: 'データベース', technologies: [ { name: 'Vector DB', color: 'bg-indigo-200 text-indigo-800' } ] },
+      { category: 'データベース', technologies: [ { name: 'Supabase (pgvector)', color: 'bg-emerald-300 text-emerald-900' } ] },
       { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
     ],
   },

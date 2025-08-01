@@ -45,6 +45,31 @@ export const apps: App[] = [
     ],
   },
   {
+  id: 2,
+  title: 'vive-with-gemini',
+  description: 'vive(ヴィーヴ）にAIと共同作業することで、ROI最大化を目指す。VitePressを使ったHPに知見を展開。',
+  screenshot: '',
+  appUrl: 'https://hara0511vive-with-gemini.vercel.app/',
+  githubUrl: 'https://github.com/tako-chan0511/vive-with-gemini',
+  tags: ['VitePress', 'Markdown', 'Vue3', 'Vite', 'TypeScript', 'TDD', 'AI Collaboration', 'Gemini API'],
+  learnings: {
+    challenge: '現代の開発において、ROI（投資対効果）を最大化し、リードタイムをいかに短縮するか。また、単なるコード生成を超え、AIとどう協業すれば真にアジャイルな開発サイクルを実現できるかが課題でした。',
+    solution: 'AI駆動のTDD（テスト駆動開発）スタイル「Viveコーディング」を実践。AIにテストを先行させることで品質と安全性を担保し、開発者はより上位の設計やリファクタリングに集中。高速なフィードバックループを生み出し、得られた知見をVitePress製のHPに資産として展開するサイクルを構築しました。',
+  },
+  features: [
+    'AI駆動TDDの実践デモンストレーション',
+    '技術コラム（マルチエージェントAIなど）の掲載',
+    '開発ROIを最大化するためのTips集',
+    'VitePressによる高速な静的サイト生成とドキュメンテーション'
+  ],
+  stack: [
+    { category: '静的サイトジェネレーター', technologies: [ { name: 'VitePress', color: 'bg-green-200 text-green-800' } ] },
+    { category: 'フロントエンド', technologies: [ { name: 'Vue 3', color: 'bg-green-200 text-green-800' }, { name: 'Markdown', color: 'bg-gray-200 text-gray-800' } ] },
+    { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-indigo-200 text-indigo-800' }, { name: 'TypeScript', color: 'bg-blue-500 text-white' } ] },
+    ],
+},
+
+  {
     id: 4,
     title: 'AIマーケットアナリスト',
     description: 'Vector DBを使わない、動的・一時的な知識ベースでのRAGアーキテクチャを実装。企業名を入力すると、関連ニュースをGNews API経由でリアルタイムに収集。その収集したテキスト全体をその場限りの知識源としてGeminiに提供し、対話的な深掘り分析を可能にします。サーバーサイドキャッシュによる高速化も特徴です。',

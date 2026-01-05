@@ -380,16 +380,16 @@ export const apps: App[] = [
   {
     id: 19,
     title: 'マインスイーパ N×M',
-    description: 'Vue 3で構築された、盤面サイズと地雷数を自由にカスタマイズできるマインスイーパ。ゲームのコアロジックは、ユーザーの最初のクリックが絶対に地雷にならない「安全な初回クリック」の保証と、空白マスが連鎖的に開く「再帰的探索アルゴリズム」の実装にあります。',
+    description: 'Vue 3で構築された、盤面サイズと地雷数を自由にカスタマイズできるマインスイーパ。ゲームの特徴、そのセルの地雷確率が「再帰的探索アルゴリズム」で計算される、空白マスが連鎖的に開く「再帰的探索アルゴリズム」の実装にあります。',
     screenshot: '',
     appUrl: 'https://tako-chan0511.github.io/Minesweeper/',
     githubUrl: 'https://github.com/tako-chan0511/Minesweeper',
     tags: ['Vue 3', 'Algorithm', 'GameDev', 'PWA', 'Vite', 'TypeScript'],
     learnings: {
-      challenge: 'ユーザーが最初にクリックしたマスとその周囲には地雷を配置しないロジックと、数字のないマスをクリックした際に隣接する安全なマスをすべて自動で開く、いわゆる「空白連鎖」の効率的な実装が課題でした。',
-      solution: '地雷の配置処理を、ユーザーの最初のクリックイベントが発生した後に実行するアーキテクチャを採用。クリックされた座標を除外して地雷をランダムに配置することで、安全な初回クリックを保証しました。空白連鎖については、クリックされたマスを起点とするキュー（Queue）を用いた幅優先探索（BFS）アルゴリズムを実装。これにより、再帰呼び出しによるスタックオーバーフローのリスクを回避しつつ、連鎖的に開くマスを効率的に特定できました。',
+      challenge: 'そのセルの地雷確率が「再帰的探索アルゴリズム」で計算されるロジックと、数字のないマスをクリックした際に隣接する安全なマスをすべて自動で開く、いわゆる「空白連鎖」の効率的な実装が課題でした。',
+      solution: '空白連鎖については、クリックされたマスを起点とするキュー（Queue）を用いた幅優先探索（BFS）アルゴリズムを実装。これにより、再帰呼び出しによるスタックオーバーフローのリスクを回避しつつ、連鎖的に開くマスを効率的に特定できました。',
     },
-    features: [ '幅・高さ・地雷数を自由に設定できる盤面生成機能', '最初のクリックが必ず安全マスになるアルゴリズム', '幅優先探索（BFS）による空白マスの連鎖展開', '右クリックによる旗立て・解除機能', 'PWA対応（オフライン動作、インストール機能）' ],
+    features: [ '幅・高さ・地雷数を自由に設定できる盤面生成機能', '空白セルの地雷確率を表示するアルゴリズム', '幅優先探索（BFS）による空白マスの連鎖展開', '右クリックによる旗立て・解除機能', 'PWA対応（オフライン動作、インストール機能）' ],
     stack: [
       { category: 'フロントエンド', technologies: [ { name: 'Vue 3', color: 'bg-green-200 text-green-800' } ] },
       { category: 'コアロジック', technologies: [ { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' } ] },
@@ -573,6 +573,46 @@ export const apps: App[] = [
       { category: 'フロントエンド', technologies: [ { name: 'Next.js', color: 'bg-black text-white' }, { name: 'React (Hooks)', color: 'bg-cyan-200 text-cyan-800' } ] },
       { category: 'パフォーマンス', technologies: [ { name: '`useMemo`', color: 'bg-green-300 text-green-900' } ] },
       { category: 'キャッシュ戦略', technologies: [ { name: 'オフライン (Service Worker)', color: 'bg-gray-300 text-gray-900' }, { name: 'クライアントサイド (localStorage)', color: 'bg-gray-300 text-gray-900' } ] },
+      { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
+    ],
+  },
+  {
+    id: 30,
+    title: '動物将棋',
+    description: '英語名（Lion catch）で有名なものの実装。',
+    screenshot: '',
+    appUrl: 'https://tako-chan0511.github.io/vue-animal-shogi/',
+    githubUrl: 'https://github.com/tako-chan0511/vue-animal-shogi',
+    tags: ['Vue 3', 'Algorithm', 'GameDev',  'Vite', 'TypeScript'],
+    learnings: {
+      challenge: 'CPU対戦モードを実装した、CPUはそれなりに強い。',
+      solution: 'CPU側は3×4の全パターンと持ち駒などを網羅的に計算比較的強いロジックに実装できた',
+    },
+    features: [ 'CPU側は3×4の全パターン確率計算' ],
+    stack: [
+      { category: 'フロントエンド', technologies: [ { name: 'Vue 3', color: 'bg-green-200 text-green-800' } ] },
+      { category: 'コアロジック', technologies: [ { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' } ] },
+      { category: 'キャッシュ戦略', technologies: [ { name: 'オフライン (Service Worker)', color: 'bg-gray-300 text-gray-900' } ] },
+      { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
+    ],
+  },
+    {
+    id: 31,
+    title: 'バックギャモン',
+    description: '英語名（backgammon）で有名なものの実装。CPU対戦モードを実装した、CPUはそれなりに強い。',
+    screenshot: '',
+    appUrl: 'https://tako-chan0511.github.io/vue-backgammon/',
+    githubUrl: 'https://github.com/tako-chan0511/vue-backgammon',
+    tags: ['Vue 3', 'Algorithm', 'GameDev',  'Vite', 'TypeScript'],
+    learnings: {
+      challenge: 'CPU対戦モードを実装した、CPUはそれなりに強い。',
+      solution: 'CPU側はそれなりに強い',
+    },
+    features: [ 'CPU側はそれなりに強い計算ロジック採用' ],
+    stack: [
+      { category: 'フロントエンド', technologies: [ { name: 'Vue 3', color: 'bg-green-200 text-green-800' } ] },
+      { category: 'コアロジック', technologies: [ { name: 'Algorithm Design', color: 'bg-purple-200 text-purple-800' } ] },
+      { category: 'キャッシュ戦略', technologies: [ { name: 'オフライン (Service Worker)', color: 'bg-gray-300 text-gray-900' } ] },
       { category: 'ビルド・開発環境', technologies: [ { name: 'Vite', color: 'bg-purple-200 text-purple-800' }, { name: 'TypeScript', color: 'bg-blue-200 text-blue-800' } ] }
     ],
   },

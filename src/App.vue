@@ -23,7 +23,7 @@ function selectTag(tag: string | null) {
   <div class="bg-gray-100 min-h-screen font-sans">
     <header class="bg-white shadow-md p-6 sticky top-0 z-10">
       <div class="container mx-auto">
-        <h1 class="text-4xl font-bold text-gray-800">SkillTrail: My Development Journey</h1>
+        <h1 class="text-4xl font-bold text-gray-800">SkillTrail: My Development Journey(vue3)</h1>
         <p class="text-lg text-gray-600 mt-2">これまでに開発したアプリケーションの軌跡</p>
       </div>
     </header>
